@@ -231,9 +231,7 @@ class OsLoginServiceClient(object):
             >>> client.delete_posix_account(name)
 
         Args:
-            name (str): Required. A reference to the POSIX account to update. POSIX accounts are
-                identified by the project ID they are associated with. A reference to
-                the POSIX account is in format ``users/{user}/projects/{project}``.
+            name (str): See ``HttpRule``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -299,9 +297,45 @@ class OsLoginServiceClient(object):
             >>> client.delete_ssh_public_key(name)
 
         Args:
-            name (str): Required. The fingerprint of the public key to update. Public keys are
-                identified by their SHA-256 fingerprint. The fingerprint of the public
-                key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            name (str): If this SourceCodeInfo represents a complete declaration, these are
+                any comments appearing before and after the declaration which appear to
+                be attached to the declaration.
+
+                A series of line comments appearing on consecutive lines, with no other
+                tokens appearing on those lines, will be treated as a single comment.
+
+                leading_detached_comments will keep paragraphs of comments that appear
+                before (but not connected to) the current element. Each paragraph,
+                separated by empty lines, will be one comment element in the repeated
+                field.
+
+                Only the comment content is provided; comment markers (e.g. //) are
+                stripped out. For block comments, leading whitespace and an asterisk
+                will be stripped from the beginning of each line other than the first.
+                Newlines are included in the output.
+
+                Examples:
+
+                optional int32 foo = 1; // Comment attached to foo. // Comment attached
+                to bar. optional int32 bar = 2;
+
+                optional string baz = 3; // Comment attached to baz. // Another line
+                attached to baz.
+
+                // Comment attached to qux. // // Another line attached to qux. optional
+                double qux = 4;
+
+                // Detached comment for corge. This is not leading or trailing comments
+                // to qux or corge because there are blank lines separating it from //
+                both.
+
+                // Detached comment for corge paragraph 2.
+
+                optional string corge = 5; /\* Block comment attached \* to corge.
+                Leading asterisks \* will be removed. */ /* Block comment attached to \*
+                grault. \*/ optional int32 grault = 6;
+
+                // ignored detached comments.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -370,7 +404,9 @@ class OsLoginServiceClient(object):
             >>> response = client.get_login_profile(name)
 
         Args:
-            name (str): Required. The unique ID for the user in format ``users/{user}``.
+            name (str): Denotes a field as required. This indicates that the field **must**
+                be provided as part of the request, and failure to do so will cause an
+                error (usually ``INVALID_ARGUMENT``).
             project_id (str): The project ID of the Google Cloud Platform project.
             system_id (str): A system ID for filtering the results of the request.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
@@ -443,9 +479,30 @@ class OsLoginServiceClient(object):
             >>> response = client.get_ssh_public_key(name)
 
         Args:
-            name (str): Required. The fingerprint of the public key to retrieve. Public keys are
-                identified by their SHA-256 fingerprint. The fingerprint of the public
-                key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            name (str): Optional. The relative resource name pattern associated with this
+                resource type. The DNS prefix of the full resource name shouldn't be
+                specified here.
+
+                The path pattern must follow the syntax, which aligns with HTTP binding
+                syntax:
+
+                ::
+
+                    Template = Segment { "/" Segment } ;
+                    Segment = LITERAL | Variable ;
+                    Variable = "{" LITERAL "}" ;
+
+                Examples:
+
+                ::
+
+                    - "projects/{project}/topics/{topic}"
+                    - "projects/{project}/knowledgeBases/{knowledge_base}"
+
+                The components in braces correspond to the IDs for each resource in the
+                hierarchy. It is expected that, if multiple patterns are provided, the
+                same component name (e.g. "project") refers to IDs of the same type of
+                resource.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -518,7 +575,11 @@ class OsLoginServiceClient(object):
             >>> response = client.import_ssh_public_key(parent)
 
         Args:
-            parent (str): Required. The unique ID for the user in format ``users/{user}``.
+            parent (str): If set, all the classes from the .proto file are wrapped in a single
+                outer class with the given name. This applies to both Proto1 (equivalent
+                to the old "--one_java_file" option) and Proto2 (where a .proto always
+                translates to a single class, but you may want to explicitly choose the
+                class name).
             ssh_public_key (Union[dict, ~google.cloud.oslogin_v1.types.SshPublicKey]): Optional. The SSH public key and expiration time.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -600,9 +661,10 @@ class OsLoginServiceClient(object):
             >>> response = client.update_ssh_public_key(name, ssh_public_key)
 
         Args:
-            name (str): Required. The fingerprint of the public key to update. Public keys are
-                identified by their SHA-256 fingerprint. The fingerprint of the public
-                key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            name (str): Denotes a field as output only. This indicates that the field is
+                provided in responses, but including the field in a request does nothing
+                (the server *must* ignore it and *must not* throw an error as a result
+                of the field's presence).
             ssh_public_key (Union[dict, ~google.cloud.oslogin_v1.types.SshPublicKey]): Required. The SSH public key and expiration time.
 
                 If a dict is provided, it must be of the same form as the protobuf
