@@ -124,90 +124,6 @@ class TestOsLoginServiceClient(object):
         with pytest.raises(CustomException):
             client.delete_ssh_public_key(name)
 
-    def test_get_login_profile(self):
-        # Setup Expected Response
-        name_2 = "name2-1052831874"
-        expected_response = {"name": name_2}
-        expected_response = oslogin_pb2.LoginProfile(**expected_response)
-
-        # Mock the API response
-        channel = ChannelStub(responses=[expected_response])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = oslogin_v1.OsLoginServiceClient()
-
-        # Setup Request
-        name = client.user_path("[USER]")
-
-        response = client.get_login_profile(name)
-        assert expected_response == response
-
-        assert len(channel.requests) == 1
-        expected_request = oslogin_pb2.GetLoginProfileRequest(name=name)
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_get_login_profile_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = oslogin_v1.OsLoginServiceClient()
-
-        # Setup request
-        name = client.user_path("[USER]")
-
-        with pytest.raises(CustomException):
-            client.get_login_profile(name)
-
-    def test_get_ssh_public_key(self):
-        # Setup Expected Response
-        key = "key106079"
-        expiration_time_usec = 2058878882
-        fingerprint = "fingerprint-1375934236"
-        name_2 = "name2-1052831874"
-        expected_response = {
-            "key": key,
-            "expiration_time_usec": expiration_time_usec,
-            "fingerprint": fingerprint,
-            "name": name_2,
-        }
-        expected_response = common_pb2.SshPublicKey(**expected_response)
-
-        # Mock the API response
-        channel = ChannelStub(responses=[expected_response])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = oslogin_v1.OsLoginServiceClient()
-
-        # Setup Request
-        name = client.ssh_public_key_path("[USER]", "[FINGERPRINT]")
-
-        response = client.get_ssh_public_key(name)
-        assert expected_response == response
-
-        assert len(channel.requests) == 1
-        expected_request = oslogin_pb2.GetSshPublicKeyRequest(name=name)
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_get_ssh_public_key_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = oslogin_v1.OsLoginServiceClient()
-
-        # Setup request
-        name = client.ssh_public_key_path("[USER]", "[FINGERPRINT]")
-
-        with pytest.raises(CustomException):
-            client.get_ssh_public_key(name)
-
     def test_import_ssh_public_key(self):
         # Setup Expected Response
         expected_response = {}
@@ -294,3 +210,87 @@ class TestOsLoginServiceClient(object):
 
         with pytest.raises(CustomException):
             client.update_ssh_public_key(name, ssh_public_key)
+
+    def test_get_login_profile(self):
+        # Setup Expected Response
+        name_2 = "name2-1052831874"
+        expected_response = {"name": name_2}
+        expected_response = oslogin_pb2.LoginProfile(**expected_response)
+
+        # Mock the API response
+        channel = ChannelStub(responses=[expected_response])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = oslogin_v1.OsLoginServiceClient()
+
+        # Setup Request
+        name = client.user_path("[USER]")
+
+        response = client.get_login_profile(name)
+        assert expected_response == response
+
+        assert len(channel.requests) == 1
+        expected_request = oslogin_pb2.GetLoginProfileRequest(name=name)
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_get_login_profile_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = oslogin_v1.OsLoginServiceClient()
+
+        # Setup request
+        name = client.user_path("[USER]")
+
+        with pytest.raises(CustomException):
+            client.get_login_profile(name)
+
+    def test_get_ssh_public_key(self):
+        # Setup Expected Response
+        key = "key106079"
+        expiration_time_usec = 2058878882
+        fingerprint = "fingerprint-1375934236"
+        name_2 = "name2-1052831874"
+        expected_response = {
+            "key": key,
+            "expiration_time_usec": expiration_time_usec,
+            "fingerprint": fingerprint,
+            "name": name_2,
+        }
+        expected_response = common_pb2.SshPublicKey(**expected_response)
+
+        # Mock the API response
+        channel = ChannelStub(responses=[expected_response])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = oslogin_v1.OsLoginServiceClient()
+
+        # Setup Request
+        name = client.ssh_public_key_path("[USER]", "[FINGERPRINT]")
+
+        response = client.get_ssh_public_key(name)
+        assert expected_response == response
+
+        assert len(channel.requests) == 1
+        expected_request = oslogin_pb2.GetSshPublicKeyRequest(name=name)
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_get_ssh_public_key_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = oslogin_v1.OsLoginServiceClient()
+
+        # Setup request
+        name = client.ssh_public_key_path("[USER]", "[FINGERPRINT]")
+
+        with pytest.raises(CustomException):
+            client.get_ssh_public_key(name)
