@@ -386,8 +386,6 @@ PosixAccount = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _POSIXACCOUNT,
         "__module__": "google.cloud.oslogin.common.common_pb2",
         "__doc__": """The POSIX account information associated with a Google account.
-  
-  
   Attributes:
       primary:
           Only one POSIX account can be marked as primary.
@@ -424,10 +422,7 @@ SshPublicKey = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _SSHPUBLICKEY,
         "__module__": "google.cloud.oslogin.common.common_pb2",
-        "__doc__": """The SSH public key information associated with a Google
-  account.
-  
-  
+        "__doc__": """The SSH public key information associated with a Google account.
   Attributes:
       key:
           Public key text in SSH format, defined by RFC4253 section 6.6.
