@@ -607,8 +607,8 @@ LoginProfile = _reflection.GeneratedProtocolMessageType(
         ),
         "DESCRIPTOR": _LOGINPROFILE,
         "__module__": "google.cloud.oslogin_v1.proto.oslogin_pb2",
-        "__doc__": """The user profile information used for logging in to a
-  virtual machine on Google Compute Engine.
+        "__doc__": """The user profile information used for logging in to a virtual machine on
+  Google Compute Engine.
   
   
   Attributes:
