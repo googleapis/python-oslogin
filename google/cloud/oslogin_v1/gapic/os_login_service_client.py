@@ -231,9 +231,9 @@ class OsLoginServiceClient(object):
             >>> client.delete_posix_account(name)
 
         Args:
-            name (str): Required. A reference to the POSIX account to update. POSIX accounts are
-                identified by the project ID they are associated with. A reference to
-                the POSIX account is in format ``users/{user}/projects/{project}``.
+            name (str): Required. A reference to the POSIX account to update. POSIX accounts
+                are identified by the project ID they are associated with. A reference
+                to the POSIX account is in format ``users/{user}/projects/{project}``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -299,9 +299,9 @@ class OsLoginServiceClient(object):
             >>> client.delete_ssh_public_key(name)
 
         Args:
-            name (str): Required. The fingerprint of the public key to update. Public keys are
-                identified by their SHA-256 fingerprint. The fingerprint of the public
-                key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            name (str): Required. The fingerprint of the public key to update. Public keys
+                are identified by their SHA-256 fingerprint. The fingerprint of the
+                public key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -443,9 +443,9 @@ class OsLoginServiceClient(object):
             >>> response = client.get_ssh_public_key(name)
 
         Args:
-            name (str): Required. The fingerprint of the public key to retrieve. Public keys are
-                identified by their SHA-256 fingerprint. The fingerprint of the public
-                key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            name (str): Required. The fingerprint of the public key to retrieve. Public keys
+                are identified by their SHA-256 fingerprint. The fingerprint of the
+                public key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -600,9 +600,9 @@ class OsLoginServiceClient(object):
             >>> response = client.update_ssh_public_key(name, ssh_public_key)
 
         Args:
-            name (str): Required. The fingerprint of the public key to update. Public keys are
-                identified by their SHA-256 fingerprint. The fingerprint of the public
-                key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            name (str): Required. The fingerprint of the public key to update. Public keys
+                are identified by their SHA-256 fingerprint. The fingerprint of the
+                public key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
             ssh_public_key (Union[dict, ~google.cloud.oslogin_v1.types.SshPublicKey]): Required. The SSH public key and expiration time.
 
                 If a dict is provided, it must be of the same form as the protobuf
