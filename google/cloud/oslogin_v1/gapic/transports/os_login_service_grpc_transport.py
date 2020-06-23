@@ -137,33 +137,6 @@ class OsLoginServiceGrpcTransport(object):
         return self._stubs["os_login_service_stub"].DeleteSshPublicKey
 
     @property
-    def get_login_profile(self):
-        """Return the gRPC stub for :meth:`OsLoginServiceClient.get_login_profile`.
-
-        Retrieves the profile information used for logging in to a virtual machine
-        on Google Compute Engine.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["os_login_service_stub"].GetLoginProfile
-
-    @property
-    def get_ssh_public_key(self):
-        """Return the gRPC stub for :meth:`OsLoginServiceClient.get_ssh_public_key`.
-
-        Retrieves an SSH public key.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["os_login_service_stub"].GetSshPublicKey
-
-    @property
     def import_ssh_public_key(self):
         """Return the gRPC stub for :meth:`OsLoginServiceClient.import_ssh_public_key`.
 
@@ -191,3 +164,30 @@ class OsLoginServiceGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["os_login_service_stub"].UpdateSshPublicKey
+
+    @property
+    def get_login_profile(self):
+        """Return the gRPC stub for :meth:`OsLoginServiceClient.get_login_profile`.
+
+        Retrieves the profile information used for logging in to a virtual machine
+        on Google Compute Engine.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["os_login_service_stub"].GetLoginProfile
+
+    @property
+    def get_ssh_public_key(self):
+        """Return the gRPC stub for :meth:`OsLoginServiceClient.get_ssh_public_key`.
+
+        Retrieves an SSH public key.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["os_login_service_stub"].GetSshPublicKey

@@ -347,153 +347,6 @@ class OsLoginServiceClient(object):
             request, retry=retry, timeout=timeout, metadata=metadata
         )
 
-    def get_login_profile(
-        self,
-        name,
-        project_id=None,
-        system_id=None,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Retrieves the profile information used for logging in to a virtual machine
-        on Google Compute Engine.
-
-        Example:
-            >>> from google.cloud import oslogin_v1
-            >>>
-            >>> client = oslogin_v1.OsLoginServiceClient()
-            >>>
-            >>> name = client.user_path('[USER]')
-            >>>
-            >>> response = client.get_login_profile(name)
-
-        Args:
-            name (str): Required. The unique ID for the user in format ``users/{user}``.
-            project_id (str): The project ID of the Google Cloud Platform project.
-            system_id (str): A system ID for filtering the results of the request.
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Returns:
-            A :class:`~google.cloud.oslogin_v1.types.LoginProfile` instance.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "get_login_profile" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "get_login_profile"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.get_login_profile,
-                default_retry=self._method_configs["GetLoginProfile"].retry,
-                default_timeout=self._method_configs["GetLoginProfile"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = oslogin_pb2.GetLoginProfileRequest(
-            name=name, project_id=project_id, system_id=system_id
-        )
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        return self._inner_api_calls["get_login_profile"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
-    def get_ssh_public_key(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Retrieves an SSH public key.
-
-        Example:
-            >>> from google.cloud import oslogin_v1
-            >>>
-            >>> client = oslogin_v1.OsLoginServiceClient()
-            >>>
-            >>> name = client.ssh_public_key_path('[USER]', '[FINGERPRINT]')
-            >>>
-            >>> response = client.get_ssh_public_key(name)
-
-        Args:
-            name (str): Required. The fingerprint of the public key to retrieve. Public keys
-                are identified by their SHA-256 fingerprint. The fingerprint of the
-                public key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Returns:
-            A :class:`~google.cloud.oslogin_v1.types.SshPublicKey` instance.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "get_ssh_public_key" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "get_ssh_public_key"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.get_ssh_public_key,
-                default_retry=self._method_configs["GetSshPublicKey"].retry,
-                default_timeout=self._method_configs["GetSshPublicKey"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = oslogin_pb2.GetSshPublicKeyRequest(name=name)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        return self._inner_api_calls["get_ssh_public_key"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
     def import_ssh_public_key(
         self,
         parent,
@@ -658,5 +511,152 @@ class OsLoginServiceClient(object):
             metadata.append(routing_metadata)
 
         return self._inner_api_calls["update_ssh_public_key"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
+    def get_login_profile(
+        self,
+        name,
+        project_id=None,
+        system_id=None,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Retrieves the profile information used for logging in to a virtual machine
+        on Google Compute Engine.
+
+        Example:
+            >>> from google.cloud import oslogin_v1
+            >>>
+            >>> client = oslogin_v1.OsLoginServiceClient()
+            >>>
+            >>> name = client.user_path('[USER]')
+            >>>
+            >>> response = client.get_login_profile(name)
+
+        Args:
+            name (str): Required. The unique ID for the user in format ``users/{user}``.
+            project_id (str): The project ID of the Google Cloud Platform project.
+            system_id (str): A system ID for filtering the results of the request.
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Returns:
+            A :class:`~google.cloud.oslogin_v1.types.LoginProfile` instance.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "get_login_profile" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "get_login_profile"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.get_login_profile,
+                default_retry=self._method_configs["GetLoginProfile"].retry,
+                default_timeout=self._method_configs["GetLoginProfile"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = oslogin_pb2.GetLoginProfileRequest(
+            name=name, project_id=project_id, system_id=system_id
+        )
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        return self._inner_api_calls["get_login_profile"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
+    def get_ssh_public_key(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Retrieves an SSH public key.
+
+        Example:
+            >>> from google.cloud import oslogin_v1
+            >>>
+            >>> client = oslogin_v1.OsLoginServiceClient()
+            >>>
+            >>> name = client.ssh_public_key_path('[USER]', '[FINGERPRINT]')
+            >>>
+            >>> response = client.get_ssh_public_key(name)
+
+        Args:
+            name (str): Required. The fingerprint of the public key to retrieve. Public keys
+                are identified by their SHA-256 fingerprint. The fingerprint of the
+                public key is in format ``users/{user}/sshPublicKeys/{fingerprint}``.
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Returns:
+            A :class:`~google.cloud.oslogin_v1.types.SshPublicKey` instance.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "get_ssh_public_key" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "get_ssh_public_key"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.get_ssh_public_key,
+                default_retry=self._method_configs["GetSshPublicKey"].retry,
+                default_timeout=self._method_configs["GetSshPublicKey"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = oslogin_pb2.GetSshPublicKeyRequest(name=name)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        return self._inner_api_calls["get_ssh_public_key"](
             request, retry=retry, timeout=timeout, metadata=metadata
         )
