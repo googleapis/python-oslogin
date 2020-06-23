@@ -38,4 +38,8 @@ class OsLoginServiceClient(os_login_service_client.OsLoginServiceClient):
     enums = enums
 
 
-__all__ = ("enums", "types", "OsLoginServiceClient")
+__all__ = (
+    "enums",
+    "types",
+    "OsLoginServiceClient",
+)

@@ -39,7 +39,9 @@ from google.protobuf import empty_pb2
 from google.protobuf import field_mask_pb2
 
 
-_GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution("google-cloud-os-login").version
+_GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution(
+    "google-cloud-os-login",
+).version
 
 
 class OsLoginServiceClient(object):
@@ -81,7 +83,7 @@ class OsLoginServiceClient(object):
     def posix_account_path(cls, user, project):
         """Return a fully-qualified posix_account string."""
         return google.api_core.path_template.expand(
-            "users/{user}/projects/{project}", user=user, project=project
+            "users/{user}/projects/{project}", user=user, project=project,
         )
 
     @classmethod
@@ -96,7 +98,7 @@ class OsLoginServiceClient(object):
     @classmethod
     def user_path(cls, user):
         """Return a fully-qualified user string."""
-        return google.api_core.path_template.expand("users/{user}", user=user)
+        return google.api_core.path_template.expand("users/{user}", user=user,)
 
     def __init__(
         self,
@@ -185,12 +187,12 @@ class OsLoginServiceClient(object):
                 self.transport = transport
         else:
             self.transport = os_login_service_grpc_transport.OsLoginServiceGrpcTransport(
-                address=api_endpoint, channel=channel, credentials=credentials
+                address=api_endpoint, channel=channel, credentials=credentials,
             )
 
         if client_info is None:
             client_info = google.api_core.gapic_v1.client_info.ClientInfo(
-                gapic_version=_GAPIC_LIBRARY_VERSION
+                gapic_version=_GAPIC_LIBRARY_VERSION,
             )
         else:
             client_info.gapic_version = _GAPIC_LIBRARY_VERSION
@@ -201,7 +203,7 @@ class OsLoginServiceClient(object):
         # (Ordinarily, these are the defaults specified in the `*_config.py`
         # file next to this one.)
         self._method_configs = google.api_core.gapic_v1.config.parse_method_configs(
-            client_config["interfaces"][self._INTERFACE_NAME]
+            client_config["interfaces"][self._INTERFACE_NAME],
         )
 
         # Save a dictionary of cached API call functions.
@@ -261,7 +263,7 @@ class OsLoginServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = oslogin_pb2.DeletePosixAccountRequest(name=name)
+        request = oslogin_pb2.DeletePosixAccountRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -329,7 +331,7 @@ class OsLoginServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = oslogin_pb2.DeleteSshPublicKeyRequest(name=name)
+        request = oslogin_pb2.DeleteSshPublicKeyRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -404,7 +406,7 @@ class OsLoginServiceClient(object):
             )
 
         request = oslogin_pb2.GetLoginProfileRequest(
-            name=name, project_id=project_id, system_id=system_id
+            name=name, project_id=project_id, system_id=system_id,
         )
         if metadata is None:
             metadata = []
@@ -476,7 +478,7 @@ class OsLoginServiceClient(object):
                 client_info=self._client_info,
             )
 
-        request = oslogin_pb2.GetSshPublicKeyRequest(name=name)
+        request = oslogin_pb2.GetSshPublicKeyRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -555,7 +557,7 @@ class OsLoginServiceClient(object):
             )
 
         request = oslogin_pb2.ImportSshPublicKeyRequest(
-            parent=parent, ssh_public_key=ssh_public_key, project_id=project_id
+            parent=parent, ssh_public_key=ssh_public_key, project_id=project_id,
         )
         if metadata is None:
             metadata = []
@@ -642,7 +644,7 @@ class OsLoginServiceClient(object):
             )
 
         request = oslogin_pb2.UpdateSshPublicKeyRequest(
-            name=name, ssh_public_key=ssh_public_key, update_mask=update_mask
+            name=name, ssh_public_key=ssh_public_key, update_mask=update_mask,
         )
         if metadata is None:
             metadata = []

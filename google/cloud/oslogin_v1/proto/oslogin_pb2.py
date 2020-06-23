@@ -168,7 +168,7 @@ _LOGINPROFILE = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_LOGINPROFILE_SSHPUBLICKEYSENTRY],
+    nested_types=[_LOGINPROFILE_SSHPUBLICKEYSENTRY,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -206,7 +206,7 @@ _DELETEPOSIXACCOUNTREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/PosixAccount",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -247,7 +247,7 @@ _DELETESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/SshPublicKey",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -367,7 +367,7 @@ _GETSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/SshPublicKey",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -487,7 +487,7 @@ _IMPORTSSHPUBLICKEYRESPONSE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
