@@ -674,8 +674,8 @@ GetLoginProfileRequest = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _GETLOGINPROFILEREQUEST,
         "__module__": "google.cloud.oslogin_v1.proto.oslogin_pb2",
-        "__doc__": """A request message for retrieving the login profile information for a
-  user.
+        "__doc__": """A request message for retrieving the login profile
+  information for a user.
   
   
   Attributes:
