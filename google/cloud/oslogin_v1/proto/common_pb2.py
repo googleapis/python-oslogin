@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.oslogin.common",
     syntax="proto3",
     serialized_options=b"\n\037com.google.cloud.oslogin.commonB\014OsLoginProtoZAgoogle.golang.org/genproto/googleapis/cloud/oslogin/common;common\252\002\033Google.Cloud.OsLogin.Common\312\002\033Google\\Cloud\\OsLogin\\Common\352\002\036Google::Cloud::OsLogin::Common\352A+\n\033oslogin.googleapis.com/User\022\014users/{user}",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n(google/cloud/oslogin/common/common.proto\x12\x1bgoogle.cloud.oslogin.common\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto"\xdc\x02\n\x0cPosixAccount\x12\x0f\n\x07primary\x18\x01 \x01(\x08\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x0b\n\x03uid\x18\x03 \x01(\x03\x12\x0b\n\x03gid\x18\x04 \x01(\x03\x12\x16\n\x0ehome_directory\x18\x05 \x01(\t\x12\r\n\x05shell\x18\x06 \x01(\t\x12\r\n\x05gecos\x18\x07 \x01(\t\x12\x11\n\tsystem_id\x18\x08 \x01(\t\x12\x17\n\naccount_id\x18\t \x01(\tB\x03\xe0\x41\x03\x12O\n\x15operating_system_type\x18\n \x01(\x0e\x32\x30.google.cloud.oslogin.common.OperatingSystemType\x12\x11\n\x04name\x18\x0b \x01(\tB\x03\xe0\x41\x03:I\xea\x41\x46\n#oslogin.googleapis.com/PosixAccount\x12\x1fusers/{user}/projects/{project}"\xba\x01\n\x0cSshPublicKey\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x14\x65xpiration_time_usec\x18\x02 \x01(\x03\x12\x18\n\x0b\x66ingerprint\x18\x03 \x01(\tB\x03\xe0\x41\x03\x12\x11\n\x04name\x18\x04 \x01(\tB\x03\xe0\x41\x03:R\xea\x41O\n#oslogin.googleapis.com/SshPublicKey\x12(users/{user}/sshPublicKeys/{fingerprint}*T\n\x13OperatingSystemType\x12%\n!OPERATING_SYSTEM_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05LINUX\x10\x01\x12\x0b\n\x07WINDOWS\x10\x02\x42\xfd\x01\n\x1f\x63om.google.cloud.oslogin.commonB\x0cOsLoginProtoZAgoogle.golang.org/genproto/googleapis/cloud/oslogin/common;common\xaa\x02\x1bGoogle.Cloud.OsLogin.Common\xca\x02\x1bGoogle\\Cloud\\OsLogin\\Common\xea\x02\x1eGoogle::Cloud::OsLogin::Common\xea\x41+\n\x1boslogin.googleapis.com/User\x12\x0cusers/{user}b\x06proto3',
     dependencies=[
         google_dot_api_dot_field__behavior__pb2.DESCRIPTOR,
@@ -34,6 +35,7 @@ _OPERATINGSYSTEMTYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.oslogin.common.OperatingSystemType",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="OPERATING_SYSTEM_TYPE_UNSPECIFIED",
@@ -41,12 +43,23 @@ _OPERATINGSYSTEMTYPE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="LINUX", index=1, number=1, serialized_options=None, type=None
+            name="LINUX",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="WINDOWS", index=2, number=2, serialized_options=None, type=None
+            name="WINDOWS",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -68,6 +81,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="primary",
@@ -86,6 +100,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="username",
@@ -104,6 +119,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="uid",
@@ -122,6 +138,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="gid",
@@ -140,6 +157,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="home_directory",
@@ -158,6 +176,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="shell",
@@ -176,6 +195,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="gecos",
@@ -194,6 +214,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="system_id",
@@ -212,6 +233,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="account_id",
@@ -230,6 +252,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\003",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="operating_system_type",
@@ -248,6 +271,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="name",
@@ -266,6 +290,7 @@ _POSIXACCOUNT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\003",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -287,6 +312,7 @@ _SSHPUBLICKEY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -305,6 +331,7 @@ _SSHPUBLICKEY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="expiration_time_usec",
@@ -323,6 +350,7 @@ _SSHPUBLICKEY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="fingerprint",
@@ -341,6 +369,7 @@ _SSHPUBLICKEY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\003",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="name",
@@ -359,6 +388,7 @@ _SSHPUBLICKEY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\003",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

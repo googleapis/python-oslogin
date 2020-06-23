@@ -28,6 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.oslogin.v1",
     syntax="proto3",
     serialized_options=b"\n\033com.google.cloud.oslogin.v1B\014OsLoginProtoP\001Z>google.golang.org/genproto/googleapis/cloud/oslogin/v1;oslogin\252\002\027Google.Cloud.OsLogin.V1\312\002\027Google\\Cloud\\OsLogin\\V1\352\002\032Google::Cloud::OsLogin::V1",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n+google/cloud/oslogin_v1/proto/oslogin.proto\x12\x17google.cloud.oslogin.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a(google/cloud/oslogin/common/common.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto"\x98\x02\n\x0cLoginProfile\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x41\n\x0eposix_accounts\x18\x02 \x03(\x0b\x32).google.cloud.oslogin.common.PosixAccount\x12Q\n\x0fssh_public_keys\x18\x03 \x03(\x0b\x32\x38.google.cloud.oslogin.v1.LoginProfile.SshPublicKeysEntry\x1a_\n\x12SshPublicKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x38\n\x05value\x18\x02 \x01(\x0b\x32).google.cloud.oslogin.common.SshPublicKey:\x02\x38\x01"V\n\x19\x44\x65letePosixAccountRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#oslogin.googleapis.com/PosixAccount"V\n\x19\x44\x65leteSshPublicKeyRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#oslogin.googleapis.com/SshPublicKey"z\n\x16GetLoginProfileRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\x12#oslogin.googleapis.com/PosixAccount\x12\x12\n\nproject_id\x18\x02 \x01(\t\x12\x11\n\tsystem_id\x18\x03 \x01(\t"S\n\x16GetSshPublicKeyRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#oslogin.googleapis.com/SshPublicKey"\xb4\x01\n\x19ImportSshPublicKeyRequest\x12;\n\x06parent\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\x12#oslogin.googleapis.com/SshPublicKey\x12\x46\n\x0essh_public_key\x18\x02 \x01(\x0b\x32).google.cloud.oslogin.common.SshPublicKeyB\x03\xe0\x41\x01\x12\x12\n\nproject_id\x18\x03 \x01(\t"Z\n\x1aImportSshPublicKeyResponse\x12<\n\rlogin_profile\x18\x01 \x01(\x0b\x32%.google.cloud.oslogin.v1.LoginProfile"\xcf\x01\n\x19UpdateSshPublicKeyRequest\x12\x39\n\x04name\x18\x01 \x01(\tB+\xe0\x41\x02\xfa\x41%\n#oslogin.googleapis.com/SshPublicKey\x12\x46\n\x0essh_public_key\x18\x02 \x01(\x0b\x32).google.cloud.oslogin.common.SshPublicKeyB\x03\xe0\x41\x02\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask2\xd0\t\n\x0eOsLoginService\x12\x8e\x01\n\x12\x44\x65letePosixAccount\x12\x32.google.cloud.oslogin.v1.DeletePosixAccountRequest\x1a\x16.google.protobuf.Empty",\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/{name=users/*/projects/*}\xda\x41\x04name\x12\x93\x01\n\x12\x44\x65leteSshPublicKey\x12\x32.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest\x1a\x16.google.protobuf.Empty"1\x82\xd3\xe4\x93\x02$*"/v1/{name=users/*/sshPublicKeys/*}\xda\x41\x04name\x12\x99\x01\n\x0fGetLoginProfile\x12/.google.cloud.oslogin.v1.GetLoginProfileRequest\x1a%.google.cloud.oslogin.v1.LoginProfile".\x82\xd3\xe4\x93\x02!\x12\x1f/v1/{name=users/*}/loginProfile\xda\x41\x04name\x12\xa0\x01\n\x0fGetSshPublicKey\x12/.google.cloud.oslogin.v1.GetSshPublicKeyRequest\x1a).google.cloud.oslogin.common.SshPublicKey"1\x82\xd3\xe4\x93\x02$\x12"/v1/{name=users/*/sshPublicKeys/*}\xda\x41\x04name\x12\xf9\x01\n\x12ImportSshPublicKey\x12\x32.google.cloud.oslogin.v1.ImportSshPublicKeyRequest\x1a\x33.google.cloud.oslogin.v1.ImportSshPublicKeyResponse"z\x82\xd3\xe4\x93\x02\x39"\'/v1/{parent=users/*}:importSshPublicKey:\x0essh_public_key\xda\x41\x15parent,ssh_public_key\xda\x41 parent,ssh_public_key,project_id\x12\xe7\x01\n\x12UpdateSshPublicKey\x12\x32.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest\x1a).google.cloud.oslogin.common.SshPublicKey"r\x82\xd3\xe4\x93\x02\x34\x32"/v1/{name=users/*/sshPublicKeys/*}:\x0essh_public_key\xda\x41\x13name,ssh_public_key\xda\x41\x1fname,ssh_public_key,update_mask\x1ar\xca\x41\x16oslogin.googleapis.com\xd2\x41Vhttps://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/computeB\xbe\x01\n\x1b\x63om.google.cloud.oslogin.v1B\x0cOsLoginProtoP\x01Z>google.golang.org/genproto/googleapis/cloud/oslogin/v1;oslogin\xaa\x02\x17Google.Cloud.OsLogin.V1\xca\x02\x17Google\\Cloud\\OsLogin\\V1\xea\x02\x1aGoogle::Cloud::OsLogin::V1b\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -47,6 +48,7 @@ _LOGINPROFILE_SSHPUBLICKEYSENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -65,6 +67,7 @@ _LOGINPROFILE_SSHPUBLICKEYSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -83,6 +86,7 @@ _LOGINPROFILE_SSHPUBLICKEYSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -103,6 +107,7 @@ _LOGINPROFILE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -121,6 +126,7 @@ _LOGINPROFILE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="posix_accounts",
@@ -139,6 +145,7 @@ _LOGINPROFILE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="ssh_public_keys",
@@ -157,6 +164,7 @@ _LOGINPROFILE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -178,6 +186,7 @@ _DELETEPOSIXACCOUNTREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -196,6 +205,7 @@ _DELETEPOSIXACCOUNTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/PosixAccount",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -217,6 +227,7 @@ _DELETESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -235,6 +246,7 @@ _DELETESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/SshPublicKey",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -256,6 +268,7 @@ _GETLOGINPROFILEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -274,6 +287,7 @@ _GETLOGINPROFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\022#oslogin.googleapis.com/PosixAccount",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="project_id",
@@ -292,6 +306,7 @@ _GETLOGINPROFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="system_id",
@@ -310,6 +325,7 @@ _GETLOGINPROFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -331,6 +347,7 @@ _GETSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -349,6 +366,7 @@ _GETSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/SshPublicKey",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -370,6 +388,7 @@ _IMPORTSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -388,6 +407,7 @@ _IMPORTSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\022#oslogin.googleapis.com/SshPublicKey",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="ssh_public_key",
@@ -406,6 +426,7 @@ _IMPORTSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="project_id",
@@ -424,6 +445,7 @@ _IMPORTSSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -445,6 +467,7 @@ _IMPORTSSHPUBLICKEYRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="login_profile",
@@ -463,6 +486,7 @@ _IMPORTSSHPUBLICKEYRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -484,6 +508,7 @@ _UPDATESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -502,6 +527,7 @@ _UPDATESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A%\n#oslogin.googleapis.com/SshPublicKey",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="ssh_public_key",
@@ -520,6 +546,7 @@ _UPDATESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="update_mask",
@@ -538,6 +565,7 @@ _UPDATESSHPUBLICKEYREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -783,6 +811,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
     file=DESCRIPTOR,
     index=0,
     serialized_options=b"\312A\026oslogin.googleapis.com\322AVhttps://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/compute",
+    create_key=_descriptor._internal_create_key,
     serialized_start=1446,
     serialized_end=2678,
     methods=[
@@ -794,6 +823,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETEPOSIXACCOUNTREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002\037*\035/v1/{name=users/*/projects/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteSshPublicKey",
@@ -803,6 +833,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
             input_type=_DELETESSHPUBLICKEYREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b'\202\323\344\223\002$*"/v1/{name=users/*/sshPublicKeys/*}\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetLoginProfile",
@@ -812,6 +843,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETLOGINPROFILEREQUEST,
             output_type=_LOGINPROFILE,
             serialized_options=b"\202\323\344\223\002!\022\037/v1/{name=users/*}/loginProfile\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetSshPublicKey",
@@ -821,6 +853,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
             input_type=_GETSSHPUBLICKEYREQUEST,
             output_type=google_dot_cloud_dot_oslogin_dot_common_dot_common__pb2._SSHPUBLICKEY,
             serialized_options=b'\202\323\344\223\002$\022"/v1/{name=users/*/sshPublicKeys/*}\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ImportSshPublicKey",
@@ -830,6 +863,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
             input_type=_IMPORTSSHPUBLICKEYREQUEST,
             output_type=_IMPORTSSHPUBLICKEYRESPONSE,
             serialized_options=b"\202\323\344\223\0029\"'/v1/{parent=users/*}:importSshPublicKey:\016ssh_public_key\332A\025parent,ssh_public_key\332A parent,ssh_public_key,project_id",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="UpdateSshPublicKey",
@@ -839,6 +873,7 @@ _OSLOGINSERVICE = _descriptor.ServiceDescriptor(
             input_type=_UPDATESSHPUBLICKEYREQUEST,
             output_type=google_dot_cloud_dot_oslogin_dot_common_dot_common__pb2._SSHPUBLICKEY,
             serialized_options=b'\202\323\344\223\00242"/v1/{name=users/*/sshPublicKeys/*}:\016ssh_public_key\332A\023name,ssh_public_key\332A\037name,ssh_public_key,update_mask',
+            create_key=_descriptor._internal_create_key,
         ),
     ],
 )
