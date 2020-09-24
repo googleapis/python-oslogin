@@ -15,25 +15,25 @@
 # limitations under the License.
 #
 
-from .services.os_login_service import OsLoginServiceClient
-from .types.oslogin import DeletePosixAccountRequest
-from .types.oslogin import DeleteSshPublicKeyRequest
-from .types.oslogin import GetLoginProfileRequest
-from .types.oslogin import GetSshPublicKeyRequest
-from .types.oslogin import ImportSshPublicKeyRequest
-from .types.oslogin import ImportSshPublicKeyResponse
-from .types.oslogin import LoginProfile
-from .types.oslogin import UpdateSshPublicKeyRequest
+from .oslogin import (
+    LoginProfile,
+    DeletePosixAccountRequest,
+    DeleteSshPublicKeyRequest,
+    GetLoginProfileRequest,
+    GetSshPublicKeyRequest,
+    ImportSshPublicKeyRequest,
+    ImportSshPublicKeyResponse,
+    UpdateSshPublicKeyRequest,
+)
 
 
 __all__ = (
+    "LoginProfile",
     "DeletePosixAccountRequest",
     "DeleteSshPublicKeyRequest",
     "GetLoginProfileRequest",
     "GetSshPublicKeyRequest",
     "ImportSshPublicKeyRequest",
     "ImportSshPublicKeyResponse",
-    "LoginProfile",
     "UpdateSshPublicKeyRequest",
-    "OsLoginServiceClient",
 )
