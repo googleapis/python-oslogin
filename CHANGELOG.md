@@ -9,7 +9,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* move to microgen (#33)
+* move to microgen (#33). See [Migration Guide](https://github.com/googleapis/python-oslogin/blob/release-v2.0.0/UPGRADING.md).
 
 ### Features
 
