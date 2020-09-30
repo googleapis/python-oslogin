@@ -28,7 +28,7 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials  # type: ignore
 from google.oauth2 import service_account  # type: ignore
 
-from google.cloud.oslogin_v1 import common as common  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 

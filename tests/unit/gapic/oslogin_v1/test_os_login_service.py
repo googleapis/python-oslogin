@@ -32,7 +32,7 @@ from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.auth import credentials
 from google.auth.exceptions import MutualTLSChannelError
-from google.cloud.oslogin_v1 import common as common  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.services.os_login_service import OsLoginServiceAsyncClient
 from google.cloud.oslogin_v1.services.os_login_service import OsLoginServiceClient
 from google.cloud.oslogin_v1.services.os_login_service import transports

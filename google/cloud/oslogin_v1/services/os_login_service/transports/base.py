@@ -25,7 +25,7 @@ from google.api_core import gapic_v1  # type: ignore
 from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials  # type: ignore
 
-from google.cloud.oslogin_v1 import common as common  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import empty_pb2 as empty  # type: ignore
 

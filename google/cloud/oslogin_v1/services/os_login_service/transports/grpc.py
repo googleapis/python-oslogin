@@ -26,7 +26,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
-from google.cloud.oslogin_v1 import common as common  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import empty_pb2 as empty  # type: ignore
 

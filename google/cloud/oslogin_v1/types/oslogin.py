@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.cloud.oslogin_v1 import common as common  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
 
