@@ -40,6 +40,12 @@ s.move(library / "tests/unit/gapic/oslogin_v1")
 s.move(library / "scripts/fixup_oslogin_v1_keywords.py")
 
 s.move(library / "docs", excludes=[library / "docs/index.rst", library / "docs/common"])
+s.move(library / "docs/common", "docs/oslogin_v1/common", excludes=[library / "docs/common/services.rst"])
+s.replace(
+    "docs/oslogin_v1/common/types.rst",
+    "google.cloud.oslogin.common.types",
+    "google.cloud.oslogin_v1.common"
+)
 
 s.replace(
     "google/cloud/oslogin_v1/**/*.py",
