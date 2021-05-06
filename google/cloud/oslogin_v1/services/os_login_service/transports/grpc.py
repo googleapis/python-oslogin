@@ -230,7 +230,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def delete_posix_account(
         self,
     ) -> Callable[[oslogin.DeletePosixAccountRequest], empty.Empty]:
-        r"""Return a callable for the delete posix account method over gRPC.
+        r"""Return a callable for the
+        delete posix account
+          method over gRPC.
 
         Deletes a POSIX account.
 
@@ -256,7 +258,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def delete_ssh_public_key(
         self,
     ) -> Callable[[oslogin.DeleteSshPublicKeyRequest], empty.Empty]:
-        r"""Return a callable for the delete ssh public key method over gRPC.
+        r"""Return a callable for the
+        delete ssh public key
+          method over gRPC.
 
         Deletes an SSH public key.
 
@@ -282,7 +286,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def get_login_profile(
         self,
     ) -> Callable[[oslogin.GetLoginProfileRequest], oslogin.LoginProfile]:
-        r"""Return a callable for the get login profile method over gRPC.
+        r"""Return a callable for the
+        get login profile
+          method over gRPC.
 
         Retrieves the profile information used for logging in
         to a virtual machine on Google Compute Engine.
@@ -309,7 +315,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def get_ssh_public_key(
         self,
     ) -> Callable[[oslogin.GetSshPublicKeyRequest], common.SshPublicKey]:
-        r"""Return a callable for the get ssh public key method over gRPC.
+        r"""Return a callable for the
+        get ssh public key
+          method over gRPC.
 
         Retrieves an SSH public key.
 
@@ -337,7 +345,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     ) -> Callable[
         [oslogin.ImportSshPublicKeyRequest], oslogin.ImportSshPublicKeyResponse
     ]:
-        r"""Return a callable for the import ssh public key method over gRPC.
+        r"""Return a callable for the
+        import ssh public key
+          method over gRPC.
 
         Adds an SSH public key and returns the profile
         information. Default POSIX account information is set
@@ -366,7 +376,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def update_ssh_public_key(
         self,
     ) -> Callable[[oslogin.UpdateSshPublicKeyRequest], common.SshPublicKey]:
-        r"""Return a callable for the update ssh public key method over gRPC.
+        r"""Return a callable for the
+        update ssh public key
+          method over gRPC.
 
         Updates an SSH public key and returns the profile
         information. This method supports patch semantics.

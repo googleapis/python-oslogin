@@ -366,7 +366,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (google.cloud.oslogin_v1.types.DeletePosixAccountRequest):
-                The request object. A request message for deleting a
+                The request object.
+                A request message for deleting a
                 POSIX account entry.
             name (str):
                 Required. A reference to the POSIX account to update.
@@ -432,7 +433,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (google.cloud.oslogin_v1.types.DeleteSshPublicKeyRequest):
-                The request object. A request message for deleting an
+                The request object.
+                A request message for deleting an
                 SSH public key.
             name (str):
                 Required. The fingerprint of the public key to update.
@@ -499,7 +501,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (google.cloud.oslogin_v1.types.GetLoginProfileRequest):
-                The request object. A request message for retrieving the
+                The request object.
+                A request message for retrieving the
                 login profile information for a user.
             name (str):
                 Required. The unique ID for the user in format
@@ -571,7 +574,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (google.cloud.oslogin_v1.types.GetSshPublicKeyRequest):
-                The request object. A request message for retrieving an
+                The request object.
+                A request message for retrieving an
                 SSH public key.
             name (str):
                 Required. The fingerprint of the public key to retrieve.
@@ -649,7 +653,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (google.cloud.oslogin_v1.types.ImportSshPublicKeyRequest):
-                The request object. A request message for importing an
+                The request object.
+                A request message for importing an
                 SSH public key.
             parent (str):
                 Required. The unique ID for the user in format
@@ -741,7 +746,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (google.cloud.oslogin_v1.types.UpdateSshPublicKeyRequest):
-                The request object. A request message for updating an
+                The request object.
+                A request message for updating an
                 SSH public key.
             name (str):
                 Required. The fingerprint of the public key to update.
