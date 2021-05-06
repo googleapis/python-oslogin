@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers  # type: ignore
 from google.api_core import gapic_v1  # type: ignore
@@ -29,7 +27,6 @@ import grpc  # type: ignore
 from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import OsLoginServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -69,7 +66,8 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -210,13 +208,15 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs,
         )
 
@@ -230,7 +230,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def delete_posix_account(
         self,
     ) -> Callable[[oslogin.DeletePosixAccountRequest], empty.Empty]:
-        r"""Return a callable for the delete posix account method over gRPC.
+        r"""Return a callable for the
+        delete posix account
+          method over gRPC.
 
         Deletes a POSIX account.
 
@@ -256,7 +258,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def delete_ssh_public_key(
         self,
     ) -> Callable[[oslogin.DeleteSshPublicKeyRequest], empty.Empty]:
-        r"""Return a callable for the delete ssh public key method over gRPC.
+        r"""Return a callable for the
+        delete ssh public key
+          method over gRPC.
 
         Deletes an SSH public key.
 
@@ -282,7 +286,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def get_login_profile(
         self,
     ) -> Callable[[oslogin.GetLoginProfileRequest], oslogin.LoginProfile]:
-        r"""Return a callable for the get login profile method over gRPC.
+        r"""Return a callable for the
+        get login profile
+          method over gRPC.
 
         Retrieves the profile information used for logging in
         to a virtual machine on Google Compute Engine.
@@ -309,7 +315,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def get_ssh_public_key(
         self,
     ) -> Callable[[oslogin.GetSshPublicKeyRequest], common.SshPublicKey]:
-        r"""Return a callable for the get ssh public key method over gRPC.
+        r"""Return a callable for the
+        get ssh public key
+          method over gRPC.
 
         Retrieves an SSH public key.
 
@@ -337,7 +345,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     ) -> Callable[
         [oslogin.ImportSshPublicKeyRequest], oslogin.ImportSshPublicKeyResponse
     ]:
-        r"""Return a callable for the import ssh public key method over gRPC.
+        r"""Return a callable for the
+        import ssh public key
+          method over gRPC.
 
         Adds an SSH public key and returns the profile
         information. Default POSIX account information is set
@@ -366,7 +376,9 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
     def update_ssh_public_key(
         self,
     ) -> Callable[[oslogin.UpdateSshPublicKeyRequest], common.SshPublicKey]:
-        r"""Return a callable for the update ssh public key method over gRPC.
+        r"""Return a callable for the
+        update ssh public key
+          method over gRPC.
 
         Updates an SSH public key and returns the profile
         information. This method supports patch semantics.

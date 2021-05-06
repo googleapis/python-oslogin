@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +14,10 @@
 # limitations under the License.
 #
 
+
 from .types.common import OperatingSystemType
 from .types.common import PosixAccount
 from .types.common import SshPublicKey
-
 
 __all__ = (
     "OperatingSystemType",

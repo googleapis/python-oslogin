@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,25 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.oslogin_v1 import common  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package="google.cloud.oslogin.v1",
+    package='google.cloud.oslogin.v1',
     manifest={
-        "LoginProfile",
-        "DeletePosixAccountRequest",
-        "DeleteSshPublicKeyRequest",
-        "GetLoginProfileRequest",
-        "GetSshPublicKeyRequest",
-        "ImportSshPublicKeyRequest",
-        "ImportSshPublicKeyResponse",
-        "UpdateSshPublicKeyRequest",
+        'LoginProfile',
+        'DeletePosixAccountRequest',
+        'DeleteSshPublicKeyRequest',
+        'GetLoginProfileRequest',
+        'GetSshPublicKeyRequest',
+        'ImportSshPublicKeyRequest',
+        'ImportSshPublicKeyResponse',
+        'UpdateSshPublicKeyRequest',
     },
 )
 
@@ -52,20 +49,25 @@ class LoginProfile(proto.Message):
             associated key object.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    posix_accounts = proto.RepeatedField(
-        proto.MESSAGE, number=2, message=common.PosixAccount,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
+    posix_accounts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
+        message=common.PosixAccount,
+    )
     ssh_public_keys = proto.MapField(
-        proto.STRING, proto.MESSAGE, number=3, message=common.SshPublicKey,
+        proto.STRING,
+        proto.MESSAGE,
+        number=3
+        message=common.SshPublicKey,
     )
 
 
 class DeletePosixAccountRequest(proto.Message):
     r"""A request message for deleting a POSIX account entry.
-
     Attributes:
         name (str):
             Required. A reference to the POSIX account to update. POSIX
@@ -74,12 +76,14 @@ class DeletePosixAccountRequest(proto.Message):
             format ``users/{user}/projects/{project}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteSshPublicKeyRequest(proto.Message):
     r"""A request message for deleting an SSH public key.
-
     Attributes:
         name (str):
             Required. The fingerprint of the public key to update.
@@ -88,7 +92,10 @@ class DeleteSshPublicKeyRequest(proto.Message):
             ``users/{user}/sshPublicKeys/{fingerprint}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetLoginProfileRequest(proto.Message):
@@ -107,16 +114,22 @@ class GetLoginProfileRequest(proto.Message):
             request.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    project_id = proto.Field(proto.STRING, number=2)
-
-    system_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    system_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetSshPublicKeyRequest(proto.Message):
     r"""A request message for retrieving an SSH public key.
-
     Attributes:
         name (str):
             Required. The fingerprint of the public key to retrieve.
@@ -125,12 +138,14 @@ class GetSshPublicKeyRequest(proto.Message):
             ``users/{user}/sshPublicKeys/{fingerprint}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ImportSshPublicKeyRequest(proto.Message):
     r"""A request message for importing an SSH public key.
-
     Attributes:
         parent (str):
             Required. The unique ID for the user in format
@@ -143,27 +158,37 @@ class ImportSshPublicKeyRequest(proto.Message):
             project.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    ssh_public_key = proto.Field(proto.MESSAGE, number=2, message=common.SshPublicKey,)
-
-    project_id = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ssh_public_key = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=common.SshPublicKey,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ImportSshPublicKeyResponse(proto.Message):
     r"""A response message for importing an SSH public key.
-
     Attributes:
         login_profile (google.cloud.oslogin_v1.types.LoginProfile):
             The login profile information for the user.
     """
 
-    login_profile = proto.Field(proto.MESSAGE, number=1, message="LoginProfile",)
+    login_profile = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message='LoginProfile',
+    )
 
 
 class UpdateSshPublicKeyRequest(proto.Message):
     r"""A request message for updating an SSH public key.
-
     Attributes:
         name (str):
             Required. The fingerprint of the public key to update.
@@ -178,11 +203,20 @@ class UpdateSshPublicKeyRequest(proto.Message):
             Updates all if not present.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    ssh_public_key = proto.Field(proto.MESSAGE, number=2, message=common.SshPublicKey,)
-
-    update_mask = proto.Field(proto.MESSAGE, number=3, message=field_mask.FieldMask,)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ssh_public_key = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=common.SshPublicKey,
+    )
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask.FieldMask,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))
