@@ -4,22 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-oslogin.git",
-        "sha": "a721d8e7d940749f6267990d152465dd8bd268d4"
+        "sha": "02d964c7579c41f5c7e8c91e28a9b478e44f4ede"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "915925089600094e72e4bfa8cf586c170e6b7109",
-        "internalRef": "366152684"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "043cc620d6a6111816d9e09f2a97208565fde958"
+        "sha": "382ed8de075e1ddc9baa4ebf8dbc5b2c257a77b8",
+        "internalRef": "370926454"
       }
     }
   ],
@@ -102,9 +95,11 @@
     "google/cloud/oslogin/py.typed",
     "google/cloud/oslogin_v1/__init__.py",
     "google/cloud/oslogin_v1/common/__init__.py",
+    "google/cloud/oslogin_v1/common/gapic_metadata.json",
     "google/cloud/oslogin_v1/common/py.typed",
     "google/cloud/oslogin_v1/common/types/__init__.py",
     "google/cloud/oslogin_v1/common/types/common.py",
+    "google/cloud/oslogin_v1/gapic_metadata.json",
     "google/cloud/oslogin_v1/proto/oslogin.proto",
     "google/cloud/oslogin_v1/py.typed",
     "google/cloud/oslogin_v1/services/__init__.py",

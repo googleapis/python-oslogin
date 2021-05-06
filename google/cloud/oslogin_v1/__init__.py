@@ -26,6 +26,7 @@ from .types.oslogin import LoginProfile
 from .types.oslogin import UpdateSshPublicKeyRequest
 
 __all__ = (
+    "OsLoginServiceClient",
     "DeletePosixAccountRequest",
     "DeleteSshPublicKeyRequest",
     "GetLoginProfileRequest",
@@ -34,5 +35,4 @@ __all__ = (
     "ImportSshPublicKeyResponse",
     "LoginProfile",
     "UpdateSshPublicKeyRequest",
-    "OsLoginServiceClient",
 )

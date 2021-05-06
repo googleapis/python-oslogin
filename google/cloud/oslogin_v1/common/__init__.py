@@ -15,12 +15,12 @@
 #
 
 
-from .types.common import OperatingSystemType
 from .types.common import PosixAccount
 from .types.common import SshPublicKey
+from .types.common import OperatingSystemType
 
 __all__ = (
-    "OperatingSystemType",
-    "SshPublicKey",
     "PosixAccount",
+    "SshPublicKey",
+    "OperatingSystemType",
 )
