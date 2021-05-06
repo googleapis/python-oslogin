@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-oslogin.git",
-        "sha": "a721d8e7d940749f6267990d152465dd8bd268d4"
+        "sha": "02d964c7579c41f5c7e8c91e28a9b478e44f4ede"
       }
     },
     {
@@ -13,13 +13,6 @@
         "remote": "https://github.com/googleapis/googleapis.git",
         "sha": "915925089600094e72e4bfa8cf586c170e6b7109",
         "internalRef": "366152684"
-      }
-    },
-    {
-      "git": {
-        "name": "synthtool",
-        "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "043cc620d6a6111816d9e09f2a97208565fde958"
       }
     }
   ],
