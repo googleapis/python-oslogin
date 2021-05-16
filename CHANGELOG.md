@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-oslogin/#history
 
+### [2.1.1](https://www.github.com/googleapis/python-oslogin/compare/v2.1.0...v2.1.1) (2021-05-16)
+
+
+### Bug Fixes
+
+* use correct retry deadline ([#56](https://www.github.com/googleapis/python-oslogin/issues/56)) ([a226955](https://www.github.com/googleapis/python-oslogin/commit/a22695516e8e89ccce2c500ade38c29451432b14))
+
 ## [2.1.0](https://www.github.com/googleapis/python-oslogin/compare/v2.0.0...v2.1.0) (2021-01-06)
 
 
