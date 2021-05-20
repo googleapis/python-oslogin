@@ -25,7 +25,7 @@ from google.api_core import gapic_v1  # type: ignore
 from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 
-from google.cloud.oslogin.v1 import common_pb2  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import empty_pb2  # type: ignore
 
@@ -293,7 +293,7 @@ class OsLoginServiceTransport(abc.ABC):
         self,
     ) -> Callable[
         [oslogin.GetSshPublicKeyRequest],
-        Union[common_pb2.SshPublicKey, Awaitable[common_pb2.SshPublicKey]],
+        Union[common.SshPublicKey, Awaitable[common.SshPublicKey]],
     ]:
         raise NotImplementedError()
 
@@ -314,7 +314,7 @@ class OsLoginServiceTransport(abc.ABC):
         self,
     ) -> Callable[
         [oslogin.UpdateSshPublicKeyRequest],
-        Union[common_pb2.SshPublicKey, Awaitable[common_pb2.SshPublicKey]],
+        Union[common.SshPublicKey, Awaitable[common.SshPublicKey]],
     ]:
         raise NotImplementedError()
 

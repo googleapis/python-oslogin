@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.cloud.oslogin.v1 import common_pb2  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 
 
@@ -41,7 +41,7 @@ class LoginProfile(proto.Message):
     Attributes:
         name (str):
             Required. A unique user ID.
-        posix_accounts (Sequence[google.cloud.oslogin.v1.common_pb2.PosixAccount]):
+        posix_accounts (Sequence[google.cloud.oslogin.v1.common.PosixAccount]):
             The list of POSIX accounts associated with
             the user.
         ssh_public_keys (Sequence[google.cloud.oslogin_v1.types.LoginProfile.SshPublicKeysEntry]):
@@ -51,10 +51,10 @@ class LoginProfile(proto.Message):
 
     name = proto.Field(proto.STRING, number=1,)
     posix_accounts = proto.RepeatedField(
-        proto.MESSAGE, number=2, message=common_pb2.PosixAccount,
+        proto.MESSAGE, number=2, message=common.PosixAccount,
     )
     ssh_public_keys = proto.MapField(
-        proto.STRING, proto.MESSAGE, number=3, message=common_pb2.SshPublicKey,
+        proto.STRING, proto.MESSAGE, number=3, message=common.SshPublicKey,
     )
 
 
@@ -124,7 +124,7 @@ class ImportSshPublicKeyRequest(proto.Message):
         parent (str):
             Required. The unique ID for the user in format
             ``users/{user}``.
-        ssh_public_key (google.cloud.oslogin.v1.common_pb2.SshPublicKey):
+        ssh_public_key (google.cloud.oslogin.v1.common.SshPublicKey):
             Optional. The SSH public key and expiration
             time.
         project_id (str):
@@ -133,9 +133,7 @@ class ImportSshPublicKeyRequest(proto.Message):
     """
 
     parent = proto.Field(proto.STRING, number=1,)
-    ssh_public_key = proto.Field(
-        proto.MESSAGE, number=2, message=common_pb2.SshPublicKey,
-    )
+    ssh_public_key = proto.Field(proto.MESSAGE, number=2, message=common.SshPublicKey,)
     project_id = proto.Field(proto.STRING, number=3,)
 
 
@@ -157,7 +155,7 @@ class UpdateSshPublicKeyRequest(proto.Message):
             Public keys are identified by their SHA-256 fingerprint. The
             fingerprint of the public key is in format
             ``users/{user}/sshPublicKeys/{fingerprint}``.
-        ssh_public_key (google.cloud.oslogin.v1.common_pb2.SshPublicKey):
+        ssh_public_key (google.cloud.oslogin.v1.common.SshPublicKey):
             Required. The SSH public key and expiration
             time.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
@@ -166,9 +164,7 @@ class UpdateSshPublicKeyRequest(proto.Message):
     """
 
     name = proto.Field(proto.STRING, number=1,)
-    ssh_public_key = proto.Field(
-        proto.MESSAGE, number=2, message=common_pb2.SshPublicKey,
-    )
+    ssh_public_key = proto.Field(proto.MESSAGE, number=2, message=common.SshPublicKey,)
     update_mask = proto.Field(
         proto.MESSAGE, number=3, message=field_mask_pb2.FieldMask,
     )

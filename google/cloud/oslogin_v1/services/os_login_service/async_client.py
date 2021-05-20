@@ -26,7 +26,7 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account  # type: ignore
 
-from google.cloud.oslogin.v1 import common_pb2  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import OsLoginServiceTransport, DEFAULT_CLIENT_INFO
@@ -415,7 +415,7 @@ class OsLoginServiceAsyncClient:
         retry: retries.Retry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
-    ) -> common_pb2.SshPublicKey:
+    ) -> common.SshPublicKey:
         r"""Retrieves an SSH public key.
 
         Args:
@@ -438,7 +438,7 @@ class OsLoginServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin.v1.common_pb2.SshPublicKey:
+            google.cloud.oslogin.v1.common.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 
@@ -495,7 +495,7 @@ class OsLoginServiceAsyncClient:
         request: oslogin.ImportSshPublicKeyRequest = None,
         *,
         parent: str = None,
-        ssh_public_key: common_pb2.SshPublicKey = None,
+        ssh_public_key: common.SshPublicKey = None,
         project_id: str = None,
         retry: retries.Retry = gapic_v1.method.DEFAULT,
         timeout: float = None,
@@ -517,7 +517,7 @@ class OsLoginServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (:class:`google.cloud.oslogin.v1.common_pb2.SshPublicKey`):
+            ssh_public_key (:class:`google.cloud.oslogin.v1.common.SshPublicKey`):
                 Optional. The SSH public key and
                 expiration time.
 
@@ -599,12 +599,12 @@ class OsLoginServiceAsyncClient:
         request: oslogin.UpdateSshPublicKeyRequest = None,
         *,
         name: str = None,
-        ssh_public_key: common_pb2.SshPublicKey = None,
+        ssh_public_key: common.SshPublicKey = None,
         update_mask: field_mask_pb2.FieldMask = None,
         retry: retries.Retry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
-    ) -> common_pb2.SshPublicKey:
+    ) -> common.SshPublicKey:
         r"""Updates an SSH public key and returns the profile
         information. This method supports patch semantics.
 
@@ -621,7 +621,7 @@ class OsLoginServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (:class:`google.cloud.oslogin.v1.common_pb2.SshPublicKey`):
+            ssh_public_key (:class:`google.cloud.oslogin.v1.common.SshPublicKey`):
                 Required. The SSH public key and
                 expiration time.
 
@@ -642,7 +642,7 @@ class OsLoginServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin.v1.common_pb2.SshPublicKey:
+            google.cloud.oslogin.v1.common.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 

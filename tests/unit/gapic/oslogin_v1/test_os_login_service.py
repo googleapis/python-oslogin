@@ -31,7 +31,7 @@ from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
-from google.cloud.oslogin.common import common_pb2  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.services.os_login_service import OsLoginServiceAsyncClient
 from google.cloud.oslogin_v1.services.os_login_service import OsLoginServiceClient
 from google.cloud.oslogin_v1.services.os_login_service import transports
@@ -1120,7 +1120,7 @@ def test_get_ssh_public_key(
         type(client.transport.get_ssh_public_key), "__call__"
     ) as call:
         # Designate an appropriate return value for the call.
-        call.return_value = common_pb2.SshPublicKey(
+        call.return_value = common.SshPublicKey(
             key="key_value",
             expiration_time_usec=2144,
             fingerprint="fingerprint_value",
@@ -1134,7 +1134,7 @@ def test_get_ssh_public_key(
         assert args[0] == oslogin.GetSshPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, common_pb2.SshPublicKey)
+    assert isinstance(response, common.SshPublicKey)
     assert response.key == "key_value"
     assert response.expiration_time_usec == 2144
     assert response.fingerprint == "fingerprint_value"
@@ -1180,7 +1180,7 @@ async def test_get_ssh_public_key_async(
     ) as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
-            common_pb2.SshPublicKey(
+            common.SshPublicKey(
                 key="key_value",
                 expiration_time_usec=2144,
                 fingerprint="fingerprint_value",
@@ -1195,7 +1195,7 @@ async def test_get_ssh_public_key_async(
         assert args[0] == oslogin.GetSshPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, common_pb2.SshPublicKey)
+    assert isinstance(response, common.SshPublicKey)
     assert response.key == "key_value"
     assert response.expiration_time_usec == 2144
     assert response.fingerprint == "fingerprint_value"
@@ -1220,7 +1220,7 @@ def test_get_ssh_public_key_field_headers():
     with mock.patch.object(
         type(client.transport.get_ssh_public_key), "__call__"
     ) as call:
-        call.return_value = common_pb2.SshPublicKey()
+        call.return_value = common.SshPublicKey()
         client.get_ssh_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1249,9 +1249,7 @@ async def test_get_ssh_public_key_field_headers_async():
     with mock.patch.object(
         type(client.transport.get_ssh_public_key), "__call__"
     ) as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
-            common_pb2.SshPublicKey()
-        )
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SshPublicKey())
         await client.get_ssh_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1272,7 +1270,7 @@ def test_get_ssh_public_key_flattened():
         type(client.transport.get_ssh_public_key), "__call__"
     ) as call:
         # Designate an appropriate return value for the call.
-        call.return_value = common_pb2.SshPublicKey()
+        call.return_value = common.SshPublicKey()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ssh_public_key(name="name_value",)
@@ -1306,11 +1304,9 @@ async def test_get_ssh_public_key_flattened_async():
         type(client.transport.get_ssh_public_key), "__call__"
     ) as call:
         # Designate an appropriate return value for the call.
-        call.return_value = common_pb2.SshPublicKey()
+        call.return_value = common.SshPublicKey()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
-            common_pb2.SshPublicKey()
-        )
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SshPublicKey())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.get_ssh_public_key(name="name_value",)
@@ -1491,7 +1487,7 @@ def test_import_ssh_public_key_flattened():
         # using the keyword arguments to the method.
         client.import_ssh_public_key(
             parent="parent_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             project_id="project_id_value",
         )
 
@@ -1500,7 +1496,7 @@ def test_import_ssh_public_key_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].parent == "parent_value"
-        assert args[0].ssh_public_key == common_pb2.SshPublicKey(key="key_value")
+        assert args[0].ssh_public_key == common.SshPublicKey(key="key_value")
         assert args[0].project_id == "project_id_value"
 
 
@@ -1513,7 +1509,7 @@ def test_import_ssh_public_key_flattened_error():
         client.import_ssh_public_key(
             oslogin.ImportSshPublicKeyRequest(),
             parent="parent_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             project_id="project_id_value",
         )
 
@@ -1538,7 +1534,7 @@ async def test_import_ssh_public_key_flattened_async():
         # using the keyword arguments to the method.
         response = await client.import_ssh_public_key(
             parent="parent_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             project_id="project_id_value",
         )
 
@@ -1547,7 +1543,7 @@ async def test_import_ssh_public_key_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].parent == "parent_value"
-        assert args[0].ssh_public_key == common_pb2.SshPublicKey(key="key_value")
+        assert args[0].ssh_public_key == common.SshPublicKey(key="key_value")
         assert args[0].project_id == "project_id_value"
 
 
@@ -1563,7 +1559,7 @@ async def test_import_ssh_public_key_flattened_error_async():
         await client.import_ssh_public_key(
             oslogin.ImportSshPublicKeyRequest(),
             parent="parent_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             project_id="project_id_value",
         )
 
@@ -1584,7 +1580,7 @@ def test_update_ssh_public_key(
         type(client.transport.update_ssh_public_key), "__call__"
     ) as call:
         # Designate an appropriate return value for the call.
-        call.return_value = common_pb2.SshPublicKey(
+        call.return_value = common.SshPublicKey(
             key="key_value",
             expiration_time_usec=2144,
             fingerprint="fingerprint_value",
@@ -1598,7 +1594,7 @@ def test_update_ssh_public_key(
         assert args[0] == oslogin.UpdateSshPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, common_pb2.SshPublicKey)
+    assert isinstance(response, common.SshPublicKey)
     assert response.key == "key_value"
     assert response.expiration_time_usec == 2144
     assert response.fingerprint == "fingerprint_value"
@@ -1644,7 +1640,7 @@ async def test_update_ssh_public_key_async(
     ) as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
-            common_pb2.SshPublicKey(
+            common.SshPublicKey(
                 key="key_value",
                 expiration_time_usec=2144,
                 fingerprint="fingerprint_value",
@@ -1659,7 +1655,7 @@ async def test_update_ssh_public_key_async(
         assert args[0] == oslogin.UpdateSshPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, common_pb2.SshPublicKey)
+    assert isinstance(response, common.SshPublicKey)
     assert response.key == "key_value"
     assert response.expiration_time_usec == 2144
     assert response.fingerprint == "fingerprint_value"
@@ -1684,7 +1680,7 @@ def test_update_ssh_public_key_field_headers():
     with mock.patch.object(
         type(client.transport.update_ssh_public_key), "__call__"
     ) as call:
-        call.return_value = common_pb2.SshPublicKey()
+        call.return_value = common.SshPublicKey()
         client.update_ssh_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1713,9 +1709,7 @@ async def test_update_ssh_public_key_field_headers_async():
     with mock.patch.object(
         type(client.transport.update_ssh_public_key), "__call__"
     ) as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
-            common_pb2.SshPublicKey()
-        )
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SshPublicKey())
         await client.update_ssh_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1736,12 +1730,12 @@ def test_update_ssh_public_key_flattened():
         type(client.transport.update_ssh_public_key), "__call__"
     ) as call:
         # Designate an appropriate return value for the call.
-        call.return_value = common_pb2.SshPublicKey()
+        call.return_value = common.SshPublicKey()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_ssh_public_key(
             name="name_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             update_mask=field_mask_pb2.FieldMask(paths=["paths_value"]),
         )
 
@@ -1750,7 +1744,7 @@ def test_update_ssh_public_key_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == "name_value"
-        assert args[0].ssh_public_key == common_pb2.SshPublicKey(key="key_value")
+        assert args[0].ssh_public_key == common.SshPublicKey(key="key_value")
         assert args[0].update_mask == field_mask_pb2.FieldMask(paths=["paths_value"])
 
 
@@ -1763,7 +1757,7 @@ def test_update_ssh_public_key_flattened_error():
         client.update_ssh_public_key(
             oslogin.UpdateSshPublicKeyRequest(),
             name="name_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             update_mask=field_mask_pb2.FieldMask(paths=["paths_value"]),
         )
 
@@ -1779,16 +1773,14 @@ async def test_update_ssh_public_key_flattened_async():
         type(client.transport.update_ssh_public_key), "__call__"
     ) as call:
         # Designate an appropriate return value for the call.
-        call.return_value = common_pb2.SshPublicKey()
+        call.return_value = common.SshPublicKey()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
-            common_pb2.SshPublicKey()
-        )
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.SshPublicKey())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.update_ssh_public_key(
             name="name_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             update_mask=field_mask_pb2.FieldMask(paths=["paths_value"]),
         )
 
@@ -1797,7 +1789,7 @@ async def test_update_ssh_public_key_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == "name_value"
-        assert args[0].ssh_public_key == common_pb2.SshPublicKey(key="key_value")
+        assert args[0].ssh_public_key == common.SshPublicKey(key="key_value")
         assert args[0].update_mask == field_mask_pb2.FieldMask(paths=["paths_value"])
 
 
@@ -1813,7 +1805,7 @@ async def test_update_ssh_public_key_flattened_error_async():
         await client.update_ssh_public_key(
             oslogin.UpdateSshPublicKeyRequest(),
             name="name_value",
-            ssh_public_key=common_pb2.SshPublicKey(key="key_value"),
+            ssh_public_key=common.SshPublicKey(key="key_value"),
             update_mask=field_mask_pb2.FieldMask(paths=["paths_value"]),
         )
 

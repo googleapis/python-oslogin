@@ -25,7 +25,7 @@ import packaging.version
 import grpc  # type: ignore
 from grpc.experimental import aio  # type: ignore
 
-from google.cloud.oslogin.v1 import common_pb2  # type: ignore
+from google.cloud.oslogin_v1 import common  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import empty_pb2  # type: ignore
 from .base import OsLoginServiceTransport, DEFAULT_CLIENT_INFO
@@ -311,7 +311,7 @@ class OsLoginServiceGrpcAsyncIOTransport(OsLoginServiceTransport):
     @property
     def get_ssh_public_key(
         self,
-    ) -> Callable[[oslogin.GetSshPublicKeyRequest], Awaitable[common_pb2.SshPublicKey]]:
+    ) -> Callable[[oslogin.GetSshPublicKeyRequest], Awaitable[common.SshPublicKey]]:
         r"""Return a callable for the get ssh public key method over gRPC.
 
         Retrieves an SSH public key.
@@ -330,7 +330,7 @@ class OsLoginServiceGrpcAsyncIOTransport(OsLoginServiceTransport):
             self._stubs["get_ssh_public_key"] = self.grpc_channel.unary_unary(
                 "/google.cloud.oslogin.v1.OsLoginService/GetSshPublicKey",
                 request_serializer=oslogin.GetSshPublicKeyRequest.serialize,
-                response_deserializer=common_pb2.SshPublicKey.deserialize,
+                response_deserializer=common.SshPublicKey.deserialize,
             )
         return self._stubs["get_ssh_public_key"]
 
@@ -369,9 +369,7 @@ class OsLoginServiceGrpcAsyncIOTransport(OsLoginServiceTransport):
     @property
     def update_ssh_public_key(
         self,
-    ) -> Callable[
-        [oslogin.UpdateSshPublicKeyRequest], Awaitable[common_pb2.SshPublicKey]
-    ]:
+    ) -> Callable[[oslogin.UpdateSshPublicKeyRequest], Awaitable[common.SshPublicKey]]:
         r"""Return a callable for the update ssh public key method over gRPC.
 
         Updates an SSH public key and returns the profile
@@ -391,7 +389,7 @@ class OsLoginServiceGrpcAsyncIOTransport(OsLoginServiceTransport):
             self._stubs["update_ssh_public_key"] = self.grpc_channel.unary_unary(
                 "/google.cloud.oslogin.v1.OsLoginService/UpdateSshPublicKey",
                 request_serializer=oslogin.UpdateSshPublicKeyRequest.serialize,
-                response_deserializer=common_pb2.SshPublicKey.deserialize,
+                response_deserializer=common.SshPublicKey.deserialize,
             )
         return self._stubs["update_ssh_public_key"]
 
