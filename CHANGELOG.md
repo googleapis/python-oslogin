@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-oslogin/#history
 
+### [2.2.2](https://www.github.com/googleapis/python-oslogin/compare/v2.2.1...v2.2.2) (2021-06-22)
+
+
+### Documentation
+
+* omit mention of Python 2.7 in 'CONTRIBUTING.rst' ([#1127](https://www.github.com/googleapis/python-oslogin/issues/1127)) ([#83](https://www.github.com/googleapis/python-oslogin/issues/83)) ([c50d994](https://www.github.com/googleapis/python-oslogin/commit/c50d994a860cd008bc13b92c00076af2c482b5f6)), closes [#1126](https://www.github.com/googleapis/python-oslogin/issues/1126)
+
 ### [2.2.1](https://www.github.com/googleapis/python-oslogin/compare/v2.2.0...v2.2.1) (2021-06-02)
 
 
