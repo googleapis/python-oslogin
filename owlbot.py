@@ -69,6 +69,7 @@ s.replace(
 # Add templated files
 # ----------------------------------------------------------------------------
 templated_files = common.py_library(
+python.py_samples(skip_readmes=True)
     samples=False,  # set to True only if there are samples
     microgenerator=True,
     cov_level=98,
