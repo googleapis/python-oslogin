@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches:
-      - v0
+      - v1
 name: unittest
 jobs:
   unit:
