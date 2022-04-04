@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-oslogin/#history
 
+### [1.0.1](https://github.com/googleapis/python-oslogin/compare/v1.0.0...v1.0.1) (2022-04-04)
+
+
+### Bug Fixes
+
+* **deps:** require google-api-core >= 1.31.5, >= 2.3.2 on v1 release ([#163](https://github.com/googleapis/python-oslogin/issues/163)) ([37e2968](https://github.com/googleapis/python-oslogin/commit/37e2968a64b9da5187480f9468f558ccd07f0497))
+
 ## [1.0.0](https://www.github.com/googleapis/python-oslogin/compare/v0.3.0...v1.0.0) (2020-06-03)
 
 
