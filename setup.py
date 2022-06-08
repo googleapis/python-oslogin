@@ -22,7 +22,7 @@ import setuptools
 
 name = "google-cloud-os-login"
 description = "Google Cloud OS Login API client library"
-version = "1.0.1"
+version = "1.0.2"
 # Should be one of:
 # 'Development Status :: 3 - Alpha'
 # 'Development Status :: 4 - Beta'
