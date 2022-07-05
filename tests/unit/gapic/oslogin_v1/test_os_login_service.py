@@ -2428,7 +2428,6 @@ def test_os_login_service_transport_auth_adc(transport_class):
     [
         transports.OsLoginServiceGrpcTransport,
         transports.OsLoginServiceGrpcAsyncIOTransport,
-        transports.OsLoginServiceRestTransport,
     ],
 )
 def test_os_login_service_transport_auth_gdch_credentials(transport_class):
