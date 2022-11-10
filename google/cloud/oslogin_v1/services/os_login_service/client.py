@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -58,7 +69,7 @@ class OsLoginServiceClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[OsLoginServiceTransport]:
         """Returns an appropriate transport class.
 
@@ -349,7 +360,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, OsLoginServiceTransport, None] = None,
+        transport: Optional[Union[str, OsLoginServiceTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -447,11 +458,11 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     def delete_posix_account(
         self,
-        request: Union[oslogin.DeletePosixAccountRequest, dict] = None,
+        request: Optional[Union[oslogin.DeletePosixAccountRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Deletes a POSIX account.
@@ -539,11 +550,11 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     def delete_ssh_public_key(
         self,
-        request: Union[oslogin.DeleteSshPublicKeyRequest, dict] = None,
+        request: Optional[Union[oslogin.DeleteSshPublicKeyRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Deletes an SSH public key.
@@ -631,11 +642,11 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     def get_login_profile(
         self,
-        request: Union[oslogin.GetLoginProfileRequest, dict] = None,
+        request: Optional[Union[oslogin.GetLoginProfileRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> oslogin.LoginProfile:
         r"""Retrieves the profile information used for logging in
@@ -735,11 +746,11 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     def get_ssh_public_key(
         self,
-        request: Union[oslogin.GetSshPublicKeyRequest, dict] = None,
+        request: Optional[Union[oslogin.GetSshPublicKeyRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> common.SshPublicKey:
         r"""Retrieves an SSH public key.
@@ -839,13 +850,13 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     def import_ssh_public_key(
         self,
-        request: Union[oslogin.ImportSshPublicKeyRequest, dict] = None,
+        request: Optional[Union[oslogin.ImportSshPublicKeyRequest, dict]] = None,
         *,
-        parent: str = None,
-        ssh_public_key: common.SshPublicKey = None,
-        project_id: str = None,
+        parent: Optional[str] = None,
+        ssh_public_key: Optional[common.SshPublicKey] = None,
+        project_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> oslogin.ImportSshPublicKeyResponse:
         r"""Adds an SSH public key and returns the profile
@@ -964,13 +975,13 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     def update_ssh_public_key(
         self,
-        request: Union[oslogin.UpdateSshPublicKeyRequest, dict] = None,
+        request: Optional[Union[oslogin.UpdateSshPublicKeyRequest, dict]] = None,
         *,
-        name: str = None,
-        ssh_public_key: common.SshPublicKey = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        name: Optional[str] = None,
+        ssh_public_key: Optional[common.SshPublicKey] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> common.SshPublicKey:
         r"""Updates an SSH public key and returns the profile
