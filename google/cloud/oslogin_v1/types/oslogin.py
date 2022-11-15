@@ -25,6 +25,7 @@ __protobuf__ = proto.module(
     package="google.cloud.oslogin.v1",
     manifest={
         "LoginProfile",
+        "CreateSshPublicKeyRequest",
         "DeletePosixAccountRequest",
         "DeleteSshPublicKeyRequest",
         "GetLoginProfileRequest",
@@ -64,6 +65,29 @@ class LoginProfile(proto.Message):
         proto.STRING,
         proto.MESSAGE,
         number=3,
+        message=common.SshPublicKey,
+    )
+
+
+class CreateSshPublicKeyRequest(proto.Message):
+    r"""A request message for creating an SSH public key.
+
+    Attributes:
+        parent (str):
+            Required. The unique ID for the user in format
+            ``users/{user}``.
+        ssh_public_key (google.cloud.oslogin.v1.common.SshPublicKey):
+            Required. The SSH public key and expiration
+            time.
+    """
+
+    parent: str = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ssh_public_key: common.SshPublicKey = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.SshPublicKey,
     )
 
@@ -185,12 +209,18 @@ class ImportSshPublicKeyResponse(proto.Message):
     Attributes:
         login_profile (google.cloud.oslogin_v1.types.LoginProfile):
             The login profile information for the user.
+        details (str):
+            Detailed information about import results.
     """
 
     login_profile: "LoginProfile" = proto.Field(
         proto.MESSAGE,
         number=1,
         message="LoginProfile",
+    )
+    details: str = proto.Field(
+        proto.STRING,
+        number=2,
     )
 
 

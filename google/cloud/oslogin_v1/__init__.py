@@ -21,6 +21,7 @@ __version__ = package_version.__version__
 from .services.os_login_service import OsLoginServiceClient
 from .services.os_login_service import OsLoginServiceAsyncClient
 
+from .types.oslogin import CreateSshPublicKeyRequest
 from .types.oslogin import DeletePosixAccountRequest
 from .types.oslogin import DeleteSshPublicKeyRequest
 from .types.oslogin import GetLoginProfileRequest
@@ -32,6 +33,7 @@ from .types.oslogin import UpdateSshPublicKeyRequest
 
 __all__ = (
     "OsLoginServiceAsyncClient",
+    "CreateSshPublicKeyRequest",
     "DeletePosixAccountRequest",
     "DeleteSshPublicKeyRequest",
     "GetLoginProfileRequest",

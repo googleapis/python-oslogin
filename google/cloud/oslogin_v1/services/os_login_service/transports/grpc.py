@@ -235,6 +235,32 @@ class OsLoginServiceGrpcTransport(OsLoginServiceTransport):
         return self._grpc_channel
 
     @property
+    def create_ssh_public_key(
+        self,
+    ) -> Callable[[oslogin.CreateSshPublicKeyRequest], common.SshPublicKey]:
+        r"""Return a callable for the create ssh public key method over gRPC.
+
+        Create an SSH public key
+
+        Returns:
+            Callable[[~.CreateSshPublicKeyRequest],
+                    ~.SshPublicKey]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if "create_ssh_public_key" not in self._stubs:
+            self._stubs["create_ssh_public_key"] = self.grpc_channel.unary_unary(
+                "/google.cloud.oslogin.v1.OsLoginService/CreateSshPublicKey",
+                request_serializer=oslogin.CreateSshPublicKeyRequest.serialize,
+                response_deserializer=common.SshPublicKey.deserialize,
+            )
+        return self._stubs["create_ssh_public_key"]
+
+    @property
     def delete_posix_account(
         self,
     ) -> Callable[[oslogin.DeletePosixAccountRequest], empty_pb2.Empty]:

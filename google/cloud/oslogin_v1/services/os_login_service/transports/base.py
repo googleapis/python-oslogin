@@ -44,7 +44,9 @@ class OsLoginServiceTransport(abc.ABC):
 
     AUTH_SCOPES = (
         "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
         "https://www.googleapis.com/auth/compute",
+        "https://www.googleapis.com/auth/compute.readonly",
     )
 
     DEFAULT_HOST: str = "oslogin.googleapis.com"
@@ -132,6 +134,11 @@ class OsLoginServiceTransport(abc.ABC):
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
         self._wrapped_methods = {
+            self.create_ssh_public_key: gapic_v1.method.wrap_method(
+                self.create_ssh_public_key,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.delete_posix_account: gapic_v1.method.wrap_method(
                 self.delete_posix_account,
                 default_retry=retries.Retry(
@@ -231,6 +238,15 @@ class OsLoginServiceTransport(abc.ABC):
              Only call this method if the transport is NOT shared
              with other clients - this may cause errors in other clients!
         """
+        raise NotImplementedError()
+
+    @property
+    def create_ssh_public_key(
+        self,
+    ) -> Callable[
+        [oslogin.CreateSshPublicKeyRequest],
+        Union[common.SshPublicKey, Awaitable[common.SshPublicKey]],
+    ]:
         raise NotImplementedError()
 
     @property

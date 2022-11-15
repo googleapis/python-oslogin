@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 from .oslogin import (
+    CreateSshPublicKeyRequest,
     DeletePosixAccountRequest,
     DeleteSshPublicKeyRequest,
     GetLoginProfileRequest,
@@ -25,6 +26,7 @@ from .oslogin import (
 )
 
 __all__ = (
+    "CreateSshPublicKeyRequest",
     "DeletePosixAccountRequest",
     "DeleteSshPublicKeyRequest",
     "GetLoginProfileRequest",

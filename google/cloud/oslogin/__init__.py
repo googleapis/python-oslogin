@@ -25,6 +25,7 @@ from google.cloud.oslogin_v1.services.os_login_service.async_client import (
     OsLoginServiceAsyncClient,
 )
 
+from google.cloud.oslogin_v1.types.oslogin import CreateSshPublicKeyRequest
 from google.cloud.oslogin_v1.types.oslogin import DeletePosixAccountRequest
 from google.cloud.oslogin_v1.types.oslogin import DeleteSshPublicKeyRequest
 from google.cloud.oslogin_v1.types.oslogin import GetLoginProfileRequest
@@ -37,6 +38,7 @@ from google.cloud.oslogin_v1.types.oslogin import UpdateSshPublicKeyRequest
 __all__ = (
     "OsLoginServiceClient",
     "OsLoginServiceAsyncClient",
+    "CreateSshPublicKeyRequest",
     "DeletePosixAccountRequest",
     "DeleteSshPublicKeyRequest",
     "GetLoginProfileRequest",
