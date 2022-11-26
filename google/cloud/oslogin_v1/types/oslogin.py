@@ -44,10 +44,10 @@ class LoginProfile(proto.Message):
     Attributes:
         name (str):
             Required. A unique user ID.
-        posix_accounts (MutableSequence[google.cloud.oslogin.v1.common.PosixAccount]):
+        posix_accounts (MutableSequence[google.cloud.oslogin_v1.common.PosixAccount]):
             The list of POSIX accounts associated with
             the user.
-        ssh_public_keys (MutableMapping[str, google.cloud.oslogin.v1.common.SshPublicKey]):
+        ssh_public_keys (MutableMapping[str, google.cloud.oslogin_v1.common.SshPublicKey]):
             A map from SSH public key fingerprint to the
             associated key object.
     """
@@ -76,7 +76,7 @@ class CreateSshPublicKeyRequest(proto.Message):
         parent (str):
             Required. The unique ID for the user in format
             ``users/{user}``.
-        ssh_public_key (google.cloud.oslogin.v1.common.SshPublicKey):
+        ssh_public_key (google.cloud.oslogin_v1.common.SshPublicKey):
             Required. The SSH public key and expiration
             time.
     """
@@ -180,7 +180,7 @@ class ImportSshPublicKeyRequest(proto.Message):
         parent (str):
             Required. The unique ID for the user in format
             ``users/{user}``.
-        ssh_public_key (google.cloud.oslogin.v1.common.SshPublicKey):
+        ssh_public_key (google.cloud.oslogin_v1.common.SshPublicKey):
             Optional. The SSH public key and expiration
             time.
         project_id (str):
@@ -233,7 +233,7 @@ class UpdateSshPublicKeyRequest(proto.Message):
             Public keys are identified by their SHA-256 fingerprint. The
             fingerprint of the public key is in format
             ``users/{user}/sshPublicKeys/{fingerprint}``.
-        ssh_public_key (google.cloud.oslogin.v1.common.SshPublicKey):
+        ssh_public_key (google.cloud.oslogin_v1.common.SshPublicKey):
             Required. The SSH public key and expiration
             time.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):

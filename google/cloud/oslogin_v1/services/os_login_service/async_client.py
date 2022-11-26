@@ -272,7 +272,7 @@ class OsLoginServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (:class:`google.cloud.oslogin.v1.common.SshPublicKey`):
+            ssh_public_key (:class:`google.cloud.oslogin_v1.common.SshPublicKey`):
                 Required. The SSH public key and
                 expiration time.
 
@@ -286,7 +286,7 @@ class OsLoginServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin.v1.common.SshPublicKey:
+            google.cloud.oslogin_v1.common.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 
@@ -710,7 +710,7 @@ class OsLoginServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin.v1.common.SshPublicKey:
+            google.cloud.oslogin_v1.common.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 
@@ -820,7 +820,7 @@ class OsLoginServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (:class:`google.cloud.oslogin.v1.common.SshPublicKey`):
+            ssh_public_key (:class:`google.cloud.oslogin_v1.common.SshPublicKey`):
                 Optional. The SSH public key and
                 expiration time.
 
@@ -955,7 +955,7 @@ class OsLoginServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (:class:`google.cloud.oslogin.v1.common.SshPublicKey`):
+            ssh_public_key (:class:`google.cloud.oslogin_v1.common.SshPublicKey`):
                 Required. The SSH public key and
                 expiration time.
 
@@ -976,7 +976,7 @@ class OsLoginServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin.v1.common.SshPublicKey:
+            google.cloud.oslogin_v1.common.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 
