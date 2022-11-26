@@ -63,8 +63,8 @@ for library in s.get_staging_dirs(default_version):
    # Remove replacement once this repository has migrated to google-cloud-python
     s.replace(
         library / "setup.py",
-        """url = \"https://github.com/googleapis/python-public-ca\"""",
-        """url = \"https://github.com/googleapis/python-security-public-ca\"""",
+        """url = \"https://github.com/googleapis/python-os-login\"""",
+        """url = \"https://github.com/googleapis/python-oslogin\"""",
     )
 
     s.move([library], excludes=["docs/index.rst", "**/gapic_version.py"])
