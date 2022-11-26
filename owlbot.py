@@ -59,6 +59,14 @@ for library in s.get_staging_dirs(default_version):
         "SshPublicKey.FromString",
         "SshPublicKey.deserialize"
     )
+
+   # Remove replacement once this repository has migrated to google-cloud-python
+    s.replace(
+        library / "setup.py",
+        """url = \"https://github.com/googleapis/python-public-ca\"""",
+        """url = \"https://github.com/googleapis/python-security-public-ca\"""",
+    )
+
     s.move([library], excludes=["docs/index.rst", "**/gapic_version.py"])
 s.remove_staging_dirs()
 
