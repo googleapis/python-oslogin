@@ -54,6 +54,7 @@ from google.cloud.oslogin_v1.types import oslogin
 from .transports.base import DEFAULT_CLIENT_INFO, OsLoginServiceTransport
 from .transports.grpc import OsLoginServiceGrpcTransport
 from .transports.grpc_asyncio import OsLoginServiceGrpcAsyncIOTransport
+from .transports.rest import OsLoginServiceRestTransport
 
 
 class OsLoginServiceClientMeta(type):
@@ -69,6 +70,7 @@ class OsLoginServiceClientMeta(type):
     )  # type: Dict[str, Type[OsLoginServiceTransport]]
     _transport_registry["grpc"] = OsLoginServiceGrpcTransport
     _transport_registry["grpc_asyncio"] = OsLoginServiceGrpcAsyncIOTransport
+    _transport_registry["rest"] = OsLoginServiceRestTransport
 
     def get_transport_class(
         cls,

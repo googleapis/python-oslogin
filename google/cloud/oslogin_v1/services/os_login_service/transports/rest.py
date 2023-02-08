@@ -14,24 +14,21 @@
 # limitations under the License.
 #
 
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import rest_streaming
-from google.api_core import path_template
-from google.api_core import gapic_v1
-
-from google.protobuf import json_format
-from requests import __version__ as requests_version
 import dataclasses
+import json  # type: ignore
 import re
 from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
+
+from google.api_core import gapic_v1, path_template, rest_helpers, rest_streaming
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+from google.protobuf import json_format
+import grpc  # type: ignore
+from requests import __version__ as requests_version
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
@@ -39,12 +36,13 @@ except AttributeError:  # pragma: NO COVER
     OptionalRetry = Union[retries.Retry, object]  # type: ignore
 
 
-from google.cloud.oslogin.common import common_pb2  # type: ignore
-from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import empty_pb2  # type: ignore
 
-from .base import OsLoginServiceTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
+from google.cloud.oslogin_v1 import common  # type: ignore
+from google.cloud.oslogin_v1.types import oslogin
 
+from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
+from .base import OsLoginServiceTransport
 
 DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     gapic_version=BASE_DEFAULT_CLIENT_INFO.gapic_version,
@@ -121,7 +119,12 @@ class OsLoginServiceRestInterceptor:
 
 
     """
-    def pre_create_ssh_public_key(self, request: oslogin.CreateSshPublicKeyRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.CreateSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_create_ssh_public_key(
+        self,
+        request: oslogin.CreateSshPublicKeyRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.CreateSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for create_ssh_public_key
 
         Override in a subclass to manipulate the request or metadata
@@ -129,7 +132,9 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_create_ssh_public_key(self, response: common_pb2.SshPublicKey) -> common_pb2.SshPublicKey:
+    def post_create_ssh_public_key(
+        self, response: common.SshPublicKey
+    ) -> common.SshPublicKey:
         """Post-rpc interceptor for create_ssh_public_key
 
         Override in a subclass to manipulate the response
@@ -137,7 +142,12 @@ class OsLoginServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_delete_posix_account(self, request: oslogin.DeletePosixAccountRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.DeletePosixAccountRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_delete_posix_account(
+        self,
+        request: oslogin.DeletePosixAccountRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.DeletePosixAccountRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_posix_account
 
         Override in a subclass to manipulate the request or metadata
@@ -145,7 +155,11 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def pre_delete_ssh_public_key(self, request: oslogin.DeleteSshPublicKeyRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.DeleteSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
+    def pre_delete_ssh_public_key(
+        self,
+        request: oslogin.DeleteSshPublicKeyRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.DeleteSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_ssh_public_key
 
         Override in a subclass to manipulate the request or metadata
@@ -153,7 +167,11 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def pre_get_login_profile(self, request: oslogin.GetLoginProfileRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.GetLoginProfileRequest, Sequence[Tuple[str, str]]]:
+    def pre_get_login_profile(
+        self,
+        request: oslogin.GetLoginProfileRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.GetLoginProfileRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_login_profile
 
         Override in a subclass to manipulate the request or metadata
@@ -161,7 +179,9 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_get_login_profile(self, response: oslogin.LoginProfile) -> oslogin.LoginProfile:
+    def post_get_login_profile(
+        self, response: oslogin.LoginProfile
+    ) -> oslogin.LoginProfile:
         """Post-rpc interceptor for get_login_profile
 
         Override in a subclass to manipulate the response
@@ -169,7 +189,12 @@ class OsLoginServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_get_ssh_public_key(self, request: oslogin.GetSshPublicKeyRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.GetSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_get_ssh_public_key(
+        self,
+        request: oslogin.GetSshPublicKeyRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.GetSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_ssh_public_key
 
         Override in a subclass to manipulate the request or metadata
@@ -177,7 +202,9 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_get_ssh_public_key(self, response: common_pb2.SshPublicKey) -> common_pb2.SshPublicKey:
+    def post_get_ssh_public_key(
+        self, response: common.SshPublicKey
+    ) -> common.SshPublicKey:
         """Post-rpc interceptor for get_ssh_public_key
 
         Override in a subclass to manipulate the response
@@ -185,7 +212,12 @@ class OsLoginServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_import_ssh_public_key(self, request: oslogin.ImportSshPublicKeyRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.ImportSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_import_ssh_public_key(
+        self,
+        request: oslogin.ImportSshPublicKeyRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.ImportSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for import_ssh_public_key
 
         Override in a subclass to manipulate the request or metadata
@@ -193,7 +225,9 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_import_ssh_public_key(self, response: oslogin.ImportSshPublicKeyResponse) -> oslogin.ImportSshPublicKeyResponse:
+    def post_import_ssh_public_key(
+        self, response: oslogin.ImportSshPublicKeyResponse
+    ) -> oslogin.ImportSshPublicKeyResponse:
         """Post-rpc interceptor for import_ssh_public_key
 
         Override in a subclass to manipulate the response
@@ -201,7 +235,12 @@ class OsLoginServiceRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_update_ssh_public_key(self, request: oslogin.UpdateSshPublicKeyRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[oslogin.UpdateSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_update_ssh_public_key(
+        self,
+        request: oslogin.UpdateSshPublicKeyRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[oslogin.UpdateSshPublicKeyRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for update_ssh_public_key
 
         Override in a subclass to manipulate the request or metadata
@@ -209,7 +248,9 @@ class OsLoginServiceRestInterceptor:
         """
         return request, metadata
 
-    def post_update_ssh_public_key(self, response: common_pb2.SshPublicKey) -> common_pb2.SshPublicKey:
+    def post_update_ssh_public_key(
+        self, response: common.SshPublicKey
+    ) -> common.SshPublicKey:
         """Post-rpc interceptor for update_ssh_public_key
 
         Override in a subclass to manipulate the response
@@ -242,20 +283,21 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
 
     """
 
-    def __init__(self, *,
-            host: str = 'oslogin.googleapis.com',
-            credentials: Optional[ga_credentials.Credentials] = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            client_cert_source_for_mtls: Optional[Callable[[
-                ], Tuple[bytes, bytes]]] = None,
-            quota_project_id: Optional[str] = None,
-            client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
-            always_use_jwt_access: Optional[bool] = False,
-            url_scheme: str = 'https',
-            interceptor: Optional[OsLoginServiceRestInterceptor] = None,
-            api_audience: Optional[str] = None,
-            ) -> None:
+    def __init__(
+        self,
+        *,
+        host: str = "oslogin.googleapis.com",
+        credentials: Optional[ga_credentials.Credentials] = None,
+        credentials_file: Optional[str] = None,
+        scopes: Optional[Sequence[str]] = None,
+        client_cert_source_for_mtls: Optional[Callable[[], Tuple[bytes, bytes]]] = None,
+        quota_project_id: Optional[str] = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
+        always_use_jwt_access: Optional[bool] = False,
+        url_scheme: str = "https",
+        interceptor: Optional[OsLoginServiceRestInterceptor] = None,
+        api_audience: Optional[str] = None,
+    ) -> None:
         """Instantiate the transport.
 
         Args:
@@ -294,7 +336,9 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         # credentials object
         maybe_url_match = re.match("^(?P<scheme>http(?:s)?://)?(?P<host>.*)$", host)
         if maybe_url_match is None:
-            raise ValueError(f"Unexpected hostname structure: {host}")  # pragma: NO COVER
+            raise ValueError(
+                f"Unexpected hostname structure: {host}"
+            )  # pragma: NO COVER
 
         url_match_items = maybe_url_match.groupdict()
 
@@ -305,10 +349,11 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
             credentials=credentials,
             client_info=client_info,
             always_use_jwt_access=always_use_jwt_access,
-            api_audience=api_audience
+            api_audience=api_audience,
         )
         self._session = AuthorizedSession(
-            self._credentials, default_host=self.DEFAULT_HOST)
+            self._credentials, default_host=self.DEFAULT_HOST
+        )
         if client_cert_source_for_mtls:
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._interceptor = interceptor or OsLoginServiceRestInterceptor()
@@ -318,19 +363,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("CreateSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.CreateSshPublicKeyRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> common_pb2.SshPublicKey:
+        def __call__(
+            self,
+            request: oslogin.CreateSshPublicKeyRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> common.SshPublicKey:
             r"""Call the create ssh public key method over HTTP.
 
             Args:
@@ -345,52 +395,57 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                     sent along with the request as metadata.
 
             Returns:
-                ~.common_pb2.SshPublicKey:
+                ~.common.SshPublicKey:
                     The SSH public key information
                 associated with a Google account.
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{parent=users/*}/sshPublicKeys',
-                'body': 'ssh_public_key',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=users/*}/sshPublicKeys",
+                    "body": "ssh_public_key",
+                },
             ]
-            request, metadata = self._interceptor.pre_create_ssh_public_key(request, metadata)
+            request, metadata = self._interceptor.pre_create_ssh_public_key(
+                request, metadata
+            )
             pb_request = oslogin.CreateSshPublicKeyRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -398,7 +453,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 raise core_exceptions.from_http_response(response)
 
             # Return the response
-            resp = common_pb2.SshPublicKey()
+            resp = common.SshPublicKey()
             pb_resp = resp
 
             json_format.Parse(response.content, pb_resp, ignore_unknown_fields=True)
@@ -409,19 +464,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("DeletePosixAccount")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.DeletePosixAccountRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ):
+        def __call__(
+            self,
+            request: oslogin.DeletePosixAccountRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ):
             r"""Call the delete posix account method over HTTP.
 
             Args:
@@ -436,37 +496,42 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                     sent along with the request as metadata.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1/{name=users/*/projects/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=users/*/projects/*}",
+                },
             ]
-            request, metadata = self._interceptor.pre_delete_posix_account(request, metadata)
+            request, metadata = self._interceptor.pre_delete_posix_account(
+                request, metadata
+            )
             pb_request = oslogin.DeletePosixAccountRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -477,19 +542,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("DeleteSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.DeleteSshPublicKeyRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ):
+        def __call__(
+            self,
+            request: oslogin.DeleteSshPublicKeyRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ):
             r"""Call the delete ssh public key method over HTTP.
 
             Args:
@@ -504,37 +574,42 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                     sent along with the request as metadata.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1/{name=users/*/sshPublicKeys/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1/{name=users/*/sshPublicKeys/*}",
+                },
             ]
-            request, metadata = self._interceptor.pre_delete_ssh_public_key(request, metadata)
+            request, metadata = self._interceptor.pre_delete_ssh_public_key(
+                request, metadata
+            )
             pb_request = oslogin.DeleteSshPublicKeyRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -545,19 +620,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("GetLoginProfile")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.GetLoginProfileRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> oslogin.LoginProfile:
+        def __call__(
+            self,
+            request: oslogin.GetLoginProfileRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> oslogin.LoginProfile:
             r"""Call the get login profile method over HTTP.
 
             Args:
@@ -579,37 +659,42 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{name=users/*}/loginProfile',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=users/*}/loginProfile",
+                },
             ]
-            request, metadata = self._interceptor.pre_get_login_profile(request, metadata)
+            request, metadata = self._interceptor.pre_get_login_profile(
+                request, metadata
+            )
             pb_request = oslogin.GetLoginProfileRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -628,19 +713,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("GetSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.GetSshPublicKeyRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> common_pb2.SshPublicKey:
+        def __call__(
+            self,
+            request: oslogin.GetSshPublicKeyRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> common.SshPublicKey:
             r"""Call the get ssh public key method over HTTP.
 
             Args:
@@ -655,43 +745,48 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                     sent along with the request as metadata.
 
             Returns:
-                ~.common_pb2.SshPublicKey:
+                ~.common.SshPublicKey:
                     The SSH public key information
                 associated with a Google account.
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1/{name=users/*/sshPublicKeys/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1/{name=users/*/sshPublicKeys/*}",
+                },
             ]
-            request, metadata = self._interceptor.pre_get_ssh_public_key(request, metadata)
+            request, metadata = self._interceptor.pre_get_ssh_public_key(
+                request, metadata
+            )
             pb_request = oslogin.GetSshPublicKeyRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -699,7 +794,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 raise core_exceptions.from_http_response(response)
 
             # Return the response
-            resp = common_pb2.SshPublicKey()
+            resp = common.SshPublicKey()
             pb_resp = resp
 
             json_format.Parse(response.content, pb_resp, ignore_unknown_fields=True)
@@ -710,19 +805,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("ImportSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.ImportSshPublicKeyRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> oslogin.ImportSshPublicKeyResponse:
+        def __call__(
+            self,
+            request: oslogin.ImportSshPublicKeyRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> oslogin.ImportSshPublicKeyResponse:
             r"""Call the import ssh public key method over HTTP.
 
             Args:
@@ -743,46 +843,51 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/{parent=users/*}:importSshPublicKey',
-                'body': 'ssh_public_key',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/{parent=users/*}:importSshPublicKey",
+                    "body": "ssh_public_key",
+                },
             ]
-            request, metadata = self._interceptor.pre_import_ssh_public_key(request, metadata)
+            request, metadata = self._interceptor.pre_import_ssh_public_key(
+                request, metadata
+            )
             pb_request = oslogin.ImportSshPublicKeyRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -801,19 +906,24 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("UpdateSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: oslogin.UpdateSshPublicKeyRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> common_pb2.SshPublicKey:
+        def __call__(
+            self,
+            request: oslogin.UpdateSshPublicKeyRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> common.SshPublicKey:
             r"""Call the update ssh public key method over HTTP.
 
             Args:
@@ -828,52 +938,57 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                     sent along with the request as metadata.
 
             Returns:
-                ~.common_pb2.SshPublicKey:
+                ~.common.SshPublicKey:
                     The SSH public key information
                 associated with a Google account.
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'patch',
-                'uri': '/v1/{name=users/*/sshPublicKeys/*}',
-                'body': 'ssh_public_key',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "patch",
+                    "uri": "/v1/{name=users/*/sshPublicKeys/*}",
+                    "body": "ssh_public_key",
+                },
             ]
-            request, metadata = self._interceptor.pre_update_ssh_public_key(request, metadata)
+            request, metadata = self._interceptor.pre_update_ssh_public_key(
+                request, metadata
+            )
             pb_request = oslogin.UpdateSshPublicKeyRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -881,7 +996,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 raise core_exceptions.from_http_response(response)
 
             # Return the response
-            resp = common_pb2.SshPublicKey()
+            resp = common.SshPublicKey()
             pb_resp = resp
 
             json_format.Parse(response.content, pb_resp, ignore_unknown_fields=True)
@@ -889,60 +1004,62 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
             return resp
 
     @property
-    def create_ssh_public_key(self) -> Callable[
-            [oslogin.CreateSshPublicKeyRequest],
-            common_pb2.SshPublicKey]:
+    def create_ssh_public_key(
+        self,
+    ) -> Callable[[oslogin.CreateSshPublicKeyRequest], common.SshPublicKey]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._CreateSshPublicKey(self._session, self._host, self._interceptor) # type: ignore
+        return self._CreateSshPublicKey(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_posix_account(self) -> Callable[
-            [oslogin.DeletePosixAccountRequest],
-            empty_pb2.Empty]:
+    def delete_posix_account(
+        self,
+    ) -> Callable[[oslogin.DeletePosixAccountRequest], empty_pb2.Empty]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeletePosixAccount(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeletePosixAccount(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_ssh_public_key(self) -> Callable[
-            [oslogin.DeleteSshPublicKeyRequest],
-            empty_pb2.Empty]:
+    def delete_ssh_public_key(
+        self,
+    ) -> Callable[[oslogin.DeleteSshPublicKeyRequest], empty_pb2.Empty]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeleteSshPublicKey(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeleteSshPublicKey(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_login_profile(self) -> Callable[
-            [oslogin.GetLoginProfileRequest],
-            oslogin.LoginProfile]:
+    def get_login_profile(
+        self,
+    ) -> Callable[[oslogin.GetLoginProfileRequest], oslogin.LoginProfile]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetLoginProfile(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetLoginProfile(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_ssh_public_key(self) -> Callable[
-            [oslogin.GetSshPublicKeyRequest],
-            common_pb2.SshPublicKey]:
+    def get_ssh_public_key(
+        self,
+    ) -> Callable[[oslogin.GetSshPublicKeyRequest], common.SshPublicKey]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetSshPublicKey(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetSshPublicKey(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def import_ssh_public_key(self) -> Callable[
-            [oslogin.ImportSshPublicKeyRequest],
-            oslogin.ImportSshPublicKeyResponse]:
+    def import_ssh_public_key(
+        self,
+    ) -> Callable[
+        [oslogin.ImportSshPublicKeyRequest], oslogin.ImportSshPublicKeyResponse
+    ]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ImportSshPublicKey(self._session, self._host, self._interceptor) # type: ignore
+        return self._ImportSshPublicKey(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def update_ssh_public_key(self) -> Callable[
-            [oslogin.UpdateSshPublicKeyRequest],
-            common_pb2.SshPublicKey]:
+    def update_ssh_public_key(
+        self,
+    ) -> Callable[[oslogin.UpdateSshPublicKeyRequest], common.SshPublicKey]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._UpdateSshPublicKey(self._session, self._host, self._interceptor) # type: ignore
+        return self._UpdateSshPublicKey(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
     def kind(self) -> str:
@@ -952,6 +1069,4 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         self._session.close()
 
 
-__all__=(
-    'OsLoginServiceRestTransport',
-)
+__all__ = ("OsLoginServiceRestTransport",)
