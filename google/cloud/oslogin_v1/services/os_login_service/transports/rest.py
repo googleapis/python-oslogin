@@ -17,7 +17,7 @@
 import dataclasses
 import json  # type: ignore
 import re
-from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
+from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
 
 from google.api_core import gapic_v1, path_template, rest_helpers, rest_streaming
@@ -363,7 +363,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("CreateSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -464,7 +464,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("DeletePosixAccount")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -542,7 +542,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("DeleteSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -620,7 +620,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("GetLoginProfile")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -713,7 +713,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("GetSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -805,7 +805,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("ImportSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -906,7 +906,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
         def __hash__(self):
             return hash("UpdateSshPublicKey")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
