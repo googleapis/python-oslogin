@@ -48,7 +48,7 @@ except AttributeError:  # pragma: NO COVER
 
 from google.protobuf import field_mask_pb2  # type: ignore
 
-from google.cloud.oslogin_v1 import common  # type: ignore
+from google.cloud.oslogin.common.types import common
 from google.cloud.oslogin_v1.types import oslogin
 
 from .transports.base import DEFAULT_CLIENT_INFO, OsLoginServiceTransport
@@ -510,7 +510,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (google.cloud.oslogin_v1.common.SshPublicKey):
+            ssh_public_key (google.cloud.oslogin.common.common_pb2.SshPublicKey):
                 Required. The SSH public key and
                 expiration time.
 
@@ -524,7 +524,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin_v1.common.SshPublicKey:
+            google.cloud.oslogin.common.common_pb2.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 
@@ -918,7 +918,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin_v1.common.SshPublicKey:
+            google.cloud.oslogin.common.common_pb2.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 
@@ -1018,7 +1018,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (google.cloud.oslogin_v1.common.SshPublicKey):
+            ssh_public_key (google.cloud.oslogin.common.common_pb2.SshPublicKey):
                 Optional. The SSH public key and
                 expiration time.
 
@@ -1143,7 +1143,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            ssh_public_key (google.cloud.oslogin_v1.common.SshPublicKey):
+            ssh_public_key (google.cloud.oslogin.common.common_pb2.SshPublicKey):
                 Required. The SSH public key and
                 expiration time.
 
@@ -1164,7 +1164,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.oslogin_v1.common.SshPublicKey:
+            google.cloud.oslogin.common.common_pb2.SshPublicKey:
                 The SSH public key information
                 associated with a Google account.
 

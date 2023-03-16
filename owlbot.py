@@ -37,24 +37,6 @@ for library in s.get_staging_dirs(default_version):
         clean_up_generated_samples = False
 
     s.replace(
-        [library / "google/cloud/**/*.py", library / "tests/**/*.py"],
-        "google.cloud.oslogin.common.common_pb2",
-        "google.cloud.oslogin_v1.common"
-    )
-
-    s.replace(
-        [library / "google/cloud/**/*.py", library / "tests/**/*.py"],
-        "from google.cloud.oslogin.common import common",
-        "from google.cloud.oslogin_v1 import common"
-    )
-
-    s.replace(
-        [library / "google/cloud/**/*.py", library / "tests/**/*.py"],
-        "common_pb2",
-        "common"
-    )
-
-    s.replace(
         library / "google/cloud/oslogin_v1/**/*.py",
         "SshPublicKey.FromString",
         "SshPublicKey.deserialize"
