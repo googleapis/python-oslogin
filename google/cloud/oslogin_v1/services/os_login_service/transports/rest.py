@@ -387,7 +387,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.CreateSshPublicKeyRequest):
                     The request object. A request message for creating an SSH
                 public key.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.
@@ -488,7 +487,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.DeletePosixAccountRequest):
                     The request object. A request message for deleting a
                 POSIX account entry.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.
@@ -566,7 +564,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.DeleteSshPublicKeyRequest):
                     The request object. A request message for deleting an SSH
                 public key.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.
@@ -644,7 +641,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.GetLoginProfileRequest):
                     The request object. A request message for retrieving the
                 login profile information for a user.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.
@@ -737,7 +733,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.GetSshPublicKeyRequest):
                     The request object. A request message for retrieving an
                 SSH public key.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.
@@ -829,7 +824,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.ImportSshPublicKeyRequest):
                     The request object. A request message for importing an
                 SSH public key.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.
@@ -930,7 +924,6 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
                 request (~.oslogin.UpdateSshPublicKeyRequest):
                     The request object. A request message for updating an SSH
                 public key.
-
                 retry (google.api_core.retry.Retry): Designation of what errors, if any,
                     should be retried.
                 timeout (float): The timeout for this request.

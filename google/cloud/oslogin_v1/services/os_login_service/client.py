@@ -501,8 +501,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (Union[google.cloud.oslogin_v1.types.CreateSshPublicKeyRequest, dict]):
-                The request object. A request message for creating an
-                SSH public key.
+                The request object. A request message for creating an SSH
+                public key.
             parent (str):
                 Required. The unique ID for the user in format
                 ``users/{user}``.
@@ -701,8 +701,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (Union[google.cloud.oslogin_v1.types.DeleteSshPublicKeyRequest, dict]):
-                The request object. A request message for deleting an
-                SSH public key.
+                The request object. A request message for deleting an SSH
+                public key.
             name (str):
                 Required. The fingerprint of the public key to update.
                 Public keys are identified by their SHA-256 fingerprint.
@@ -1132,8 +1132,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         Args:
             request (Union[google.cloud.oslogin_v1.types.UpdateSshPublicKeyRequest, dict]):
-                The request object. A request message for updating an
-                SSH public key.
+                The request object. A request message for updating an SSH
+                public key.
             name (str):
                 Required. The fingerprint of the public key to update.
                 Public keys are identified by their SHA-256 fingerprint.
