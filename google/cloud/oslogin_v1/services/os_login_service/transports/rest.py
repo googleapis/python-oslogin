@@ -38,7 +38,7 @@ except AttributeError:  # pragma: NO COVER
 
 from google.protobuf import empty_pb2  # type: ignore
 
-from google.cloud.oslogin.common.types import common
+from google.cloud.oslogin_v1.common.types import common
 from google.cloud.oslogin_v1.types import oslogin
 
 from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO

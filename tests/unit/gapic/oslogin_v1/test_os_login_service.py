@@ -43,7 +43,7 @@ import pytest
 from requests import PreparedRequest, Request, Response
 from requests.sessions import Session
 
-from google.cloud.oslogin.common.types import common
+from google.cloud.oslogin_v1.common.types import common
 from google.cloud.oslogin_v1.services.os_login_service import (
     OsLoginServiceAsyncClient,
     OsLoginServiceClient,
