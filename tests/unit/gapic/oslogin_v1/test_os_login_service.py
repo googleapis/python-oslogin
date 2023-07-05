@@ -43,7 +43,7 @@ import pytest
 from requests import PreparedRequest, Request, Response
 from requests.sessions import Session
 
-from google.cloud.oslogin_v1 import common  # type: ignore
+from google.cloud.oslogin.common.types import common
 from google.cloud.oslogin_v1.services.os_login_service import (
     OsLoginServiceAsyncClient,
     OsLoginServiceClient,
@@ -2520,7 +2520,7 @@ def test_create_ssh_public_key_rest(request_type):
         # Wrap the value into a proper Response obj
         response_value = Response()
         response_value.status_code = 200
-        pb_return_value = return_value
+        pb_return_value = common.SshPublicKey.pb(return_value)
         json_return_value = json_format.MessageToJson(pb_return_value)
 
         response_value._content = json_return_value.encode("UTF-8")
@@ -2600,7 +2600,7 @@ def test_create_ssh_public_key_rest_required_fields(
             response_value = Response()
             response_value.status_code = 200
 
-            pb_return_value = return_value
+            pb_return_value = common.SshPublicKey.pb(return_value)
             json_return_value = json_format.MessageToJson(pb_return_value)
 
             response_value._content = json_return_value.encode("UTF-8")
@@ -2739,7 +2739,7 @@ def test_create_ssh_public_key_rest_flattened():
         # Wrap the value into a proper Response obj
         response_value = Response()
         response_value.status_code = 200
-        pb_return_value = return_value
+        pb_return_value = common.SshPublicKey.pb(return_value)
         json_return_value = json_format.MessageToJson(pb_return_value)
         response_value._content = json_return_value.encode("UTF-8")
         req.return_value = response_value
@@ -3586,7 +3586,7 @@ def test_get_ssh_public_key_rest(request_type):
         # Wrap the value into a proper Response obj
         response_value = Response()
         response_value.status_code = 200
-        pb_return_value = return_value
+        pb_return_value = common.SshPublicKey.pb(return_value)
         json_return_value = json_format.MessageToJson(pb_return_value)
 
         response_value._content = json_return_value.encode("UTF-8")
@@ -3665,7 +3665,7 @@ def test_get_ssh_public_key_rest_required_fields(
             response_value = Response()
             response_value.status_code = 200
 
-            pb_return_value = return_value
+            pb_return_value = common.SshPublicKey.pb(return_value)
             json_return_value = json_format.MessageToJson(pb_return_value)
 
             response_value._content = json_return_value.encode("UTF-8")
@@ -3787,7 +3787,7 @@ def test_get_ssh_public_key_rest_flattened():
         # Wrap the value into a proper Response obj
         response_value = Response()
         response_value.status_code = 200
-        pb_return_value = return_value
+        pb_return_value = common.SshPublicKey.pb(return_value)
         json_return_value = json_format.MessageToJson(pb_return_value)
         response_value._content = json_return_value.encode("UTF-8")
         req.return_value = response_value
@@ -4146,7 +4146,7 @@ def test_update_ssh_public_key_rest(request_type):
         # Wrap the value into a proper Response obj
         response_value = Response()
         response_value.status_code = 200
-        pb_return_value = return_value
+        pb_return_value = common.SshPublicKey.pb(return_value)
         json_return_value = json_format.MessageToJson(pb_return_value)
 
         response_value._content = json_return_value.encode("UTF-8")
@@ -4228,7 +4228,7 @@ def test_update_ssh_public_key_rest_required_fields(
             response_value = Response()
             response_value.status_code = 200
 
-            pb_return_value = return_value
+            pb_return_value = common.SshPublicKey.pb(return_value)
             json_return_value = json_format.MessageToJson(pb_return_value)
 
             response_value._content = json_return_value.encode("UTF-8")
@@ -4368,7 +4368,7 @@ def test_update_ssh_public_key_rest_flattened():
         # Wrap the value into a proper Response obj
         response_value = Response()
         response_value.status_code = 200
-        pb_return_value = return_value
+        pb_return_value = common.SshPublicKey.pb(return_value)
         json_return_value = json_format.MessageToJson(pb_return_value)
         response_value._content = json_return_value.encode("UTF-8")
         req.return_value = response_value

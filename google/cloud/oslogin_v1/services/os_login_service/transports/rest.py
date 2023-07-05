@@ -38,7 +38,7 @@ except AttributeError:  # pragma: NO COVER
 
 from google.protobuf import empty_pb2  # type: ignore
 
-from google.cloud.oslogin_v1 import common  # type: ignore
+from google.cloud.oslogin.common.types import common
 from google.cloud.oslogin_v1.types import oslogin
 
 from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -453,7 +453,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
 
             # Return the response
             resp = common.SshPublicKey()
-            pb_resp = resp
+            pb_resp = common.SshPublicKey.pb(resp)
 
             json_format.Parse(response.content, pb_resp, ignore_unknown_fields=True)
             resp = self._interceptor.post_create_ssh_public_key(resp)
@@ -790,7 +790,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
 
             # Return the response
             resp = common.SshPublicKey()
-            pb_resp = resp
+            pb_resp = common.SshPublicKey.pb(resp)
 
             json_format.Parse(response.content, pb_resp, ignore_unknown_fields=True)
             resp = self._interceptor.post_get_ssh_public_key(resp)
@@ -990,7 +990,7 @@ class OsLoginServiceRestTransport(OsLoginServiceTransport):
 
             # Return the response
             resp = common.SshPublicKey()
-            pb_resp = resp
+            pb_resp = common.SshPublicKey.pb(resp)
 
             json_format.Parse(response.content, pb_resp, ignore_unknown_fields=True)
             resp = self._interceptor.post_update_ssh_public_key(resp)
