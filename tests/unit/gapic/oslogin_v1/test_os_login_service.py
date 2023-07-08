@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2022 Google LLC
+# Copyright 2023 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -2663,7 +2663,7 @@ def test_create_ssh_public_key_rest_interceptors(null_interceptor):
         req.return_value = Response()
         req.return_value.status_code = 200
         req.return_value.request = PreparedRequest()
-        req.return_value._content = json_format.MessageToJson(common.SshPublicKey())
+        req.return_value._content = common.SshPublicKey.to_json(common.SshPublicKey())
 
         request = oslogin.CreateSshPublicKeyRequest()
         metadata = [
@@ -3718,7 +3718,7 @@ def test_get_ssh_public_key_rest_interceptors(null_interceptor):
         req.return_value = Response()
         req.return_value.status_code = 200
         req.return_value.request = PreparedRequest()
-        req.return_value._content = json_format.MessageToJson(common.SshPublicKey())
+        req.return_value._content = common.SshPublicKey.to_json(common.SshPublicKey())
 
         request = oslogin.GetSshPublicKeyRequest()
         metadata = [
@@ -4291,7 +4291,7 @@ def test_update_ssh_public_key_rest_interceptors(null_interceptor):
         req.return_value = Response()
         req.return_value.status_code = 200
         req.return_value.request = PreparedRequest()
-        req.return_value._content = json_format.MessageToJson(common.SshPublicKey())
+        req.return_value._content = common.SshPublicKey.to_json(common.SshPublicKey())
 
         request = oslogin.UpdateSshPublicKeyRequest()
         metadata = [
